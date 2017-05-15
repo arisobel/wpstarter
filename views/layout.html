@@ -1,0 +1,532 @@
+{{import breadcrumbs}}
+{{breadcrumbs.append()}}
+{{from bookmark import Bookmark}}
+{{#response.bookmark = bookmark.create()}}
+{{response.bookmark = Bookmark()}}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>{{=response.title or request.application}}</title>
+
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+  <link rel="apple-touch-icon" href="{{=URL('static','images/favicon.ico')}}">
+
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="{{=URL('static','plugins/bootstrap/css/bootstrap.min.css')}}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{=URL('static','css/AdminLTE.min.css')}}">
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect.
+  -->
+  <link rel="stylesheet" href="{{=URL('static','css/skins/skin-blue.min.css')}}">
+  <link rel="stylesheet" href="{{=URL('static','css/skins/skin-black.min.css')}}">
+  <link rel="stylesheet" href="{{=URL('static','css/skins/skin-yellow.min.css')}}">
+  <link rel="stylesheet" href="{{=URL('static','css/skins/skin-purple.min.css')}}">
+  
+  
+  <link rel="stylesheet" href="{{=URL('static','css/skins/skin-purple.min.css')}}">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- REQUIRED JS SCRIPTS -->
+
+  <!-- jQuery 2.1.4 -->
+  <script src="{{=URL('static','plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
+  <!-- Bootstrap 3.3.5 -->
+  <script src="{{=URL('static','plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+  <script src="{{=URL('static','plugins/select2/select2.min.js')}}"></script>
+  
+  
+  <!-- AdminLTE App -->
+  <!-- AdminLTE App -->
+  <script src="{{=URL('static','js/app.min.js')}}"></script>
+
+  <link rel="stylesheet" href="{{=URL('static','css/web2py.css')}}">
+  <link rel="stylesheet" href="{{=URL('static','css/web2py-bootstrap3.css')}}">
+  <link rel="stylesheet" href="{{=URL('static','css/starter.css')}}">
+  <link rel="stylesheet" href="{{=URL('static','css/contract.css')}}">
+  <link rel="stylesheet" href="{{=URL('static','css/bookmark.css')}}">
+  
+  
+  <link rel="stylesheet" href="{{=URL('static','plugins/select2/select2.min.css')}}"></')}}">
+
+  {{include 'web2py_ajax.html'}} <!-- this includes jquery.js, calendar.js/.css and web2py.js -->
+
+  {{
+  # using sidebars need to know what sidebar you want to use
+  mc0 = 'col-md-12'
+  mc1 = 'col-md-9'
+  mc2 = 'col-md-6'
+  left_sidebar_enabled = globals().get('left_sidebar_enabled', False)
+  right_sidebar_enabled = globals().get('right_sidebar_enabled', False)
+  middle_column = {0: mc0, 1: mc1, 2: mc2}[
+  (left_sidebar_enabled and 1 or 0)+(right_sidebar_enabled and 1 or 0)]
+  }}
+
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="fixed hold-transition skin-purple sidebar-mini">
+
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="{{=URL('default','index')}}" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini">
+        {{=response.logo_mini}}
+      </span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">
+        {{=response.logo}}
+      </span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+
+          {{if auth.user and is_user_member('admin'):}}
+
+              <!-- Messages Menu -->
+              {{=LOAD('message', 'menu.load', ajax=True, content='')}}
+
+              <!-- Notifications Menu -->
+              <li class="dropdown notifications-menu">
+                <!-- Menu toggle button -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-bell-o"></i>
+                  <span class="label label-warning">1</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">You have 1 notifications</li>
+                  <li>
+                    <!-- Inner Menu: contains the notifications -->
+                    <ul class="menu">
+                      <li><!-- start notification -->
+                        <a href="#">
+                          <i class="fa fa-users text-aqua"></i> ABC Investments signed PSA for Loan 1234
+                        </a>
+                      </li>
+                      <!-- end notification -->
+                    </ul>
+                  </li>
+                  <li class="footer"><a href="#">View all</a></li>
+                </ul>
+              </li> <!-- /Notifications Menu -->
+
+              <!-- Tasks Menu -->
+              <li class="dropdown tasks-menu">
+                <!-- Menu Toggle Button -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-flag-o"></i>
+                  <span class="label label-danger">9</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">You have 9 tasks</li>
+                  <li>
+                    <!-- Inner menu: contains the tasks -->
+                    <ul class="menu">
+                      <li><!-- Task item -->
+                        <a href="#">
+                          <!-- Task title and progress text -->
+                          <h3>
+                            Review and complete PSA for Loan 1234
+                            <small class="pull-right">20%</small>
+                          </h3>
+                          <!-- The progress bar -->
+                          <div class="progress xs">
+                            <!-- Change the css width attribute to simulate progress -->
+                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                              <span class="sr-only">20% Complete</span>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <!-- end task item -->
+                    </ul>
+                  </li>
+                  <li class="footer">
+                    <a href="#">View all tasks</a>
+                  </li>
+                </ul>
+              </li> <!-- /Tasks Menu -->
+
+          {{pass}}
+
+          {{if auth.user:}}
+
+              <!-- User Account Menu -->
+              <li class="dropdown user user-menu">
+
+                <!-- Menu Toggle Button -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <!-- The user image in the navbar-->
+                  <img src="{{=URL('static','img/avatar5.png')}}" class="user-image" alt="User Image">
+                  <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                  <span class="hidden-xs">{{=auth.user.first_name}} {{=auth.user.last_name}} <span class="caret"></span></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                  <!-- User Menu Header -->
+                  <li class="user-header">
+                    <img src="{{=URL('static','img/avatar5.png')}}" class="img-circle" alt="User Image">
+                    <p>
+                      {{=auth.user.first_name}} {{=auth.user.last_name}}
+                      <small>{{=' | '.join(auth.user_groups.values())}}</small>
+                    </p>
+                  </li>
+                  <!-- User Menu Body -->
+                  <li class="user-body">
+                    <div class="row">
+                      <div class="col-xs-4 text-center">
+                        <a href="{{=URL('default', 'user', args=['profile'], vars={'_next': URL()})}}"><i class="fa fa-user"></i><br>Profile</a>
+                      </div>
+                      <div class="col-xs-4 text-center">
+                        <a href="{{=URL('default', 'user', args=['change_password'], vars={'_next': URL()})}}"><i class="fa fa-key"></i><br>Password</a>
+                      </div>
+                      <div class="col-xs-4 text-center">
+                        <a href="{{=URL('default', 'user', args=['logout'], vars={'_next': URL()})}}"><i class="fa fa-sign-out"></i><br>Log&nbsp;Out</a>
+                      </div>
+                    </div>
+                    <!-- /.row -->
+                  </li>
+                </ul>
+
+              </li> <!-- /User Account Menu -->
+
+              <!-- Control Sidebar Toggle Button -->
+              <li>
+                  <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+              </li>
+
+          {{else:}}
+
+              <!-- Log In Menu -->
+              <li class="dropdown user user-menu">
+
+                <!-- Menu toggle button -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
+
+                <ul class="dropdown-menu">
+                  {{if not 'register' in auth.settings.actions_disabled:}}
+                    <li class="user-body">
+                      <a href="{{=URL('default', 'user', args=['register'], vars={'_next': URL()})}}"><i class="fa fa-pencil-square-o"></i>Register</a>
+                    </li>
+                  {{pass}}
+                  <li class="user-body">
+                    <a href="{{=URL('default', 'user', args=['request_reset_password'], vars={'_next': URL()})}}"><i class="fa fa-key fa-fw"></i>Forgot Password?</a>
+                    <a href="{{=URL('default', 'user', args=['retrieve_username'], vars={'_next': URL()})}}"><i class="fa fa-user fa-fw"></i>Forgot Username?</a>
+                  </li>
+                  <li class="user-body">
+                    <a href="{{=URL('default', 'user', args=['login'], vars={'_next': URL()})}}"><i class="fa fa-sign-in fa-fw"></i>Log In</a>
+                  </li>
+                </ul>
+
+              </li> <!-- /Log In Menu -->
+
+          {{pass}}
+
+        </ul> <!-- /.navbar-nav -->
+      </div> <!-- /.navbar-custom-menu -->
+    </nav>
+  </header>
+
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      {{if auth.user:}}
+
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel">
+              <div class="pull-left image">
+                  <img src="{{=URL('static','img/avatar5.png')}}" class="img-circle" alt="User Image">
+              </div>
+              <div class="pull-left info">
+                  <p>
+                  {{=auth.user.first_name}} {{=auth.user.last_name}}
+                  </p>
+                  <!-- Status -->
+                  <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+              </div>
+          </div>
+          <!--  /sidebar user panel -->
+
+          <!-- search form (Optional) -->
+          {{if auth.user and is_user_member('admin'):}}
+              <form action="{{=URL('default', 'search')}}" method="get" class="sidebar-form">
+                  <div class="input-group">
+                      <input type="text" name="q" class="form-control" placeholder="Search...">
+                      <span class="input-group-btn">
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                            <i class="fa fa-search"></i>
+                        </button>
+                      </span>
+                  </div>
+              </form>
+          {{pass}}
+          <!-- /search form -->
+
+      {{pass}}
+
+      <!-- Sidebar Menu -->
+      {{include 'layout_menu.html'}}
+      <!-- /Sidebar Menu -->
+
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+
+    <!-- response.flash message -->
+    {{if response.flash:}}
+    <section class="content-header">
+      <div class="alert alert-warning alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <strong>Holy guacamole!</strong> {{=response.flash}}
+      </div>
+    </section>
+    {{pass}}
+
+    <!-- Content Header (Page header) -->
+    {{if response.view_title:}}
+    <section class="content-header">
+
+      <h1>
+
+        {{=response.view_title}}
+        <small>{{=response.subtitle or ''}}</small>
+
+        {{include 'bookmark/bookmark_button.html'}}
+
+      </h1>
+
+      <ol class="breadcrumb">
+        {{for crumb in session.breadcrumbs:}}
+          <li><a href="{{=crumb['url']}}"><i class="fa fa-{{=crumb['icon']}}"></i>{{=crumb['label']}}</a></li>
+        {{pass}}
+      </ol>
+
+    </section>
+    {{pass}}
+
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Your Page Content Here -->
+      <div class="row">
+
+        {{if left_sidebar_enabled:}}
+          <div class="col-md-4 col-sm-6 col-xs-12">
+              {{block left_sidebar}}
+              {{end}}
+          </div>
+        {{pass}}
+
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          {{block center}}
+            {{include}}
+          {{end}}
+        </div>
+
+        {{if right_sidebar_enabled:}}
+          <div class="col-md-4 col-sm-6 col-xs-12">
+              {{block right_sidebar}}
+              {{end}}
+          </div>
+        {{pass}}
+
+      </div>
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+
+    <!-- To the right -->
+    {{if auth.user and is_user_member('admin'):}}
+    <div class="pull-right hidden-xs">
+      {{include 'plugin_create_trello_card.html'}}
+      <a href="{{=URL('default', 'changelog')}}">Version {{=response.version}}</a>
+    </div>
+    {{pass}}
+
+    <!-- Default to the left -->
+    <div>
+      <strong>
+        Copyright &copy;
+        <script>document.write(new Date().getFullYear());</script>
+        <a href="#">{{=response.company}}</a>.
+      </strong> All rights reserved.
+    </div>
+
+    {{if request.is_local:}}
+    <div id="response-toolbar">
+      <hr>
+      {{=response.toolbar()}}
+    </div>
+    {{pass}}
+
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li class="{{=user_visibility('Admin')}}"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li class="active"><a href="#control-sidebar-bookmarks-tab" data-toggle="tab"><i class="fa fa-bookmark"></i></a></li>
+      <li class="{{=user_visibility('Admin')}}"><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-wrench"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+      <!-- Home tab content -->
+      <div class="tab-pane" id="control-sidebar-home-tab">
+
+        <h3 class="control-sidebar-heading">Recent Activity</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript::;">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Charlie Brown signed PSA</h4>
+
+                <p>23 on April 24th</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript::;">
+              <h4 class="control-sidebar-subheading">
+                Deal: Big Miami Property Due Diligence
+                <span class="label label-danger pull-right">70%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+      </div><!-- /Home tab content -->
+      <!-- /.tab-pane -->
+
+      <!-- Bookmarks tab content -->
+      <div class="tab-pane active" id="control-sidebar-bookmarks-tab">
+        <h3 class="control-sidebar-heading">Bookmarks</h3>
+
+        <div id="bookmark_list">
+          {{if auth.user:}}
+            {{=LOAD('bookmark', 'list.load', ajax=True, content='loading ...')}}
+          {{pass}}
+        </div>
+
+      </div><!-- /Bookmarks tab content -->
+      <!-- /.tab-pane -->
+
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">General Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Some information about this general settings option
+            </p>
+          </div><!-- /.form-group -->
+
+        </form>
+      </div><!-- /.tab-pane -->
+
+    </div>
+  </aside><!-- /.control-sidebar -->
+
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+
+</div><!-- /.wrapper -->
+
+<!-- REQUIRED JS SCRIPTS *** moved to head *** -->
+
+<!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. Slimscroll is required when using the
+     fixed layout. -->
+
+ <script>
+ {{block js }}
+ {{ end }}
+  </script>
+     
+</body>
+</html>

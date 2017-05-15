@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.UnboundLocalError'> local variable 'add_class' referenced before assignment"
+p3
+sS'layer'
+p4
+S'C:\\web2py\\applications\\wpstarter\\controllers/client.py'
+p5
+sS'code'
+p6
+S"\xef\xbb\xbf# -*- coding: utf-8 -*-\n\ndef index():\n    form = SQLFORM.grid(db.CLIENTES)\n    print form.element(_id='CLIENTES_ESTADO', onupdate=add_class())\n    def add_class():\n        form.element(_id='CLIENTES_ESTADO')['_class']='select2 form-control string'\n    return locals()\nresponse._vars=response._caller(index)\n"
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "C:\\web2py\\gluon\\restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "C:\\web2py\\applications\\wpstarter\\controllers/client.py", line 9, in <module>\n  File "C:\\web2py\\gluon\\globals.py", line 417, in <lambda>\n    self._caller = lambda f: f()\n  File "C:\\web2py\\applications\\wpstarter\\controllers/client.py", line 5, in index\n    print form.element(_id=\'CLIENTES_ESTADO\', onupdate=add_class())\nUnboundLocalError: local variable \'add_class\' referenced before assignment\n'
+p11
+s.

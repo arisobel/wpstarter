@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S'<class \'gluon.contrib.pymysql.err.InternalError\'> (1050, u"Table \'t_menu_master\' already exists")'
+p3
+sS'layer'
+p4
+S'C:\\web2py\\applications\\wpstarter\\models\\db1_menu.py'
+p5
+sS'code'
+p6
+S"#menus tables\n########################################\n\n#=====================================================================================\n# menu Master\n#=====================================================================================\n#tabela do Master do menu\n\ndb.define_table('t_menu_master',\n        Field('f_menu_master', 'string', label='Menu Master'),\n        Field('f_menu_master_icon', 'string', label='Icon'),\n        Field('f_order_master', 'integer', label='Ordem'),\n        format='%(f_menu_master)s',\n        migrate=True)\n#=====================================================================================\n# menu\n#=====================================================================================\n#tabela do menu\ndb.define_table('t_menu',\n        Field('f_menu_master', db.t_menu_master, label='Menu Master'),\n        Field('f_menu_detail','string', label='Menu Detalhe'),\n        Field('f_menu_detail_icon','string', label='Icon'),\n        Field('f_menu_controller','string',label='Controller'),\n        Field('f_menu_function','string',label='Function'),\n        Field('f_menu_order', 'integer', label='Ordem'),\n        Field('f_need_sign', 'boolean', label='User Signature'),\n        format='%(f_menu_detail)s',\n        migrate=True)\n\n#=====================================================================================\n# Menu x Grupos\n#=====================================================================================\ndb.define_table('t_menu_group',\n        Field('f_menu', db.t_menu, label='Menu'),\n        Field('f_grupo',db.auth_group, label='Groups'),\n        migrate=True)\n\n\n########################################"
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "C:\\web2py\\gluon\\restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "C:\\web2py\\applications\\wpstarter\\models\\db1_menu.py", line 20, in <module>\n    Field(\'f_menu_master\', db.t_menu_master, label=\'Menu Master\'),\n  File "C:\\web2py\\gluon\\packages\\dal\\pydal\\base.py", line 920, in __getattr__\n    return self.lazy_define_table(tablename, *fields, **args)\n  File "C:\\web2py\\gluon\\packages\\dal\\pydal\\base.py", line 873, in lazy_define_table\n    polymodel=polymodel)\n  File "C:\\web2py\\gluon\\packages\\dal\\pydal\\adapters\\base.py", line 482, in create_table\n    self.create_sequence_and_triggers(query, table)\n  File "C:\\web2py\\gluon\\packages\\dal\\pydal\\adapters\\base.py", line 1369, in create_sequence_and_triggers\n    self.execute(query)\n  File "C:\\web2py\\gluon\\packages\\dal\\pydal\\adapters\\base.py", line 1388, in execute\n    return self.log_execute(*a, **b)\n  File "C:\\web2py\\gluon\\packages\\dal\\pydal\\adapters\\base.py", line 1382, in log_execute\n    ret = self.get_cursor().execute(command, *a[1:], **b)\n  File "C:\\web2py\\gluon\\contrib\\pymysql\\cursors.py", line 117, in execute\n    self.errorhandler(self, exc, value)\n  File "C:\\web2py\\gluon\\contrib\\pymysql\\connections.py", line 202, in defaulterrorhandler\n    raise errorclass, errorvalue\nInternalError: (1050, u"Table \'t_menu_master\' already exists")\n'
+p11
+s.

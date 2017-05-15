@@ -1,0 +1,169 @@
+timestamp: 2017-05-15T14:08:50.824000
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    username CHAR(128),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512),
+    bookmarks CHAR(4096),
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2017-05-15T14:08:50.836000
+CREATE TABLE t_menu_master(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    f_menu_master CHAR(512),
+    f_menu_master_icon CHAR(512),
+    f_order_master INTEGER
+);
+success!
+timestamp: 2017-05-15T14:08:50.851000
+CREATE TABLE t_menu(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    f_menu_master INTEGER REFERENCES t_menu_master (id) ON DELETE CASCADE  ,
+    f_menu_detail CHAR(512),
+    f_menu_detail_icon CHAR(512),
+    f_menu_controller CHAR(512),
+    f_menu_function CHAR(512),
+    f_menu_order INTEGER,
+    f_need_sign CHAR(1)
+);
+success!
+timestamp: 2017-05-15T14:08:50.886000
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2017-05-15T14:08:50.898000
+CREATE TABLE t_menu_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    f_menu INTEGER REFERENCES t_menu (id) ON DELETE CASCADE  ,
+    f_group INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2017-05-15T14:13:53.246000
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2017-05-15T14:48:37.978000
+CREATE TABLE message(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    context CHAR(25),
+    context_id INTEGER,
+    auth_user INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    direction CHAR(8),
+    is_read CHAR(1),
+    msg_sender CHAR(100),
+    msg_from CHAR(100),
+    msg_recipient CHAR(100),
+    msg_to CHAR(100),
+    msg_subject CHAR(100),
+    msg_body CHAR(500),
+    msg_html CHAR(500),
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2017-05-15T14:48:51.441000
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2017-05-15T14:48:51.457000
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2017-05-15T14:48:51.466000
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2017-05-15T14:48:51.476000
+CREATE TABLE person(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(25),
+    auth_user INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    addr_street CHAR(50),
+    addr_city CHAR(50),
+    addr_state CHAR(50),
+    addr_zip CHAR(50),
+    phone CHAR(50),
+    fax CHAR(50),
+    string_list CHAR(25),
+    status INTEGER,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2017-05-15T14:48:51.566000
+CREATE TABLE dog(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(100),
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2017-05-15T14:48:51.586000
+CREATE TABLE dog_owner(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person INTEGER REFERENCES person (id) ON DELETE CASCADE  ,
+    dog INTEGER REFERENCES dog (id) ON DELETE CASCADE  ,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  
+);
+success!

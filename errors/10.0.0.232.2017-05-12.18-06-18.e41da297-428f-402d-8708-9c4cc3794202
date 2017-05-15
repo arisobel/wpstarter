@@ -1,0 +1,385 @@
+(dp1
+S'output'
+p2
+S'missing "pass" in view'
+p3
+sS'layer'
+p4
+S'ParserContainer'
+p5
+sS'code'
+p6
+S'response.view_title = \'Application Administration\'\nresponse.write(\'\\r\\n\', escape=False)\nresponse.subtitle = \'\'\nresponse.write(\'\\r\\n\\r\\n\', escape=False)\nimport breadcrumbs\nresponse.write(\'\\r\\n\', escape=False)\nbreadcrumbs.append()\nresponse.write(\'\\r\\n\', escape=False)\nfrom bookmark import Bookmark\nresponse.write(\'\\r\\n\', escape=False)\n#response.bookmark = bookmark.create()\nresponse.write(\'\\r\\n\', escape=False)\nresponse.bookmark = Bookmark()\nresponse.write(\'\\r\\n\\r\\n<!DOCTYPE html>\\r\\n<html>\\r\\n<head>\\r\\n  <meta charset="utf-8">\\r\\n  <meta http-equiv="X-UA-Compatible" content="IE=edge">\\r\\n\\r\\n  <title>\', escape=False)\nresponse.write(response.title or request.application)\nresponse.write(\'</title>\\r\\n\\r\\n  <!-- Tell the browser to be responsive to screen width -->\\r\\n  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">\\r\\n\\r\\n  <link rel="shortcut icon" href="\', escape=False)\nresponse.write(URL(\'static\',\'images/favicon.ico\'))\nresponse.write(\'" type="image/x-icon">\\r\\n  <link rel="apple-touch-icon" href="\', escape=False)\nresponse.write(URL(\'static\',\'images/favicon.ico\'))\nresponse.write(\'">\\r\\n\\r\\n  <!-- Bootstrap 3.3.5 -->\\r\\n  <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'plugins/bootstrap/css/bootstrap.min.css\'))\nresponse.write(\'">\\r\\n  <!-- Font Awesome -->\\r\\n  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">\\r\\n  <!-- Ionicons -->\\r\\n  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">\\r\\n  <!-- Theme style -->\\r\\n  <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'css/AdminLTE.min.css\'))\nresponse.write(\'">\\r\\n  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter\\r\\n        page. However, you can choose any other skin. Make sure you\\r\\n        apply the skin class to the body tag so the changes take effect.\\r\\n  -->\\r\\n  <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'css/skins/skin-blue.min.css\'))\nresponse.write(\'">\\r\\n\\r\\n  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->\\r\\n  <!-- WARNING: Respond.js doesn\\\'t work if you view the page via file:// -->\\r\\n  <!--[if lt IE 9]>\\r\\n  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>\\r\\n  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>\\r\\n  <![endif]-->\\r\\n\\r\\n  <!-- REQUIRED JS SCRIPTS -->\\r\\n\\r\\n  <!-- jQuery 2.1.4 -->\\r\\n  <script src="\', escape=False)\nresponse.write(URL(\'static\',\'plugins/jQuery/jQuery-2.1.4.min.js\'))\nresponse.write(\'"></script>\\r\\n  <!-- Bootstrap 3.3.5 -->\\r\\n  <script src="\', escape=False)\nresponse.write(URL(\'static\',\'plugins/bootstrap/js/bootstrap.min.js\'))\nresponse.write(\'"></script>\\r\\n  <!-- AdminLTE App -->\\r\\n  <script src="\', escape=False)\nresponse.write(URL(\'static\',\'js/app.min.js\'))\nresponse.write(\'"></script>\\r\\n\\r\\n  <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'css/web2py.css\'))\nresponse.write(\'">\\r\\n  <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'css/web2py-bootstrap3.css\'))\nresponse.write(\'">\\r\\n  <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'css/starter.css\'))\nresponse.write(\'">\\r\\n  <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'css/contract.css\'))\nresponse.write(\'">\\r\\n  <link rel="stylesheet" href="\', escape=False)\nresponse.write(URL(\'static\',\'css/bookmark.css\'))\nresponse.write(\'">\\r\\n\\r\\n  \', escape=False)\nresponse.write(\'<script type="text/javascript">\\r\\n    <!--\\r\\n    // These variables are used by the web2py_ajax_init function in web2py_ajax.js (which is loaded below).\\r\\n    var w2p_ajax_confirm_message = "\', escape=False)\nresponse.write(T(\'Are you sure you want to delete this object?\'))\nresponse.write(\'";\\r\\n    var w2p_ajax_disable_with_message = "\', escape=False)\nresponse.write(T(\'Working...\'))\nresponse.write(\'";\\r\\n    var w2p_ajax_date_format = "\', escape=False)\nresponse.write(T(\'%Y-%m-%d\'))\nresponse.write(\'";\\r\\n    var w2p_ajax_datetime_format = "\', escape=False)\nresponse.write(T(\'%Y-%m-%d %H:%M:%S\'))\nresponse.write(\'";\\r\\n    var ajax_error_500 = \\\'\', escape=False)\nresponse.write(T.M(\'An error occured, please [[reload %s]] the page\') % URL(args=request.args, vars=request.get_vars))\nresponse.write("\'\\r\\n    //\\r\\n    -->\\r\\n    var w2p_app_name = \'", escape=False)\nresponse.write(request.application)\nresponse.write("\'  // used in bookmark.js\\r\\n</script>\\r\\n\\r\\n", escape=False)\n# response.files.insert(1,URL(\'static\',\'css/calendar.css\'))\n# response.files.insert(2,URL(\'static\',\'js/calendar.js\'))\nresponse.files.insert(1,URL(\'static\',\'plugins/slimScroll/jquery.slimscroll.min.js\'))\nresponse.files.insert(2,URL(\'static\',\'plugins/datepicker/datepicker3.css\'))\nresponse.files.insert(3,URL(\'static\',\'plugins/datepicker/bootstrap-datepicker.js\'))\nresponse.files.insert(4,URL(\'static\',\'js/web2py.js\'))\nresponse.files.insert(4,URL(\'static\',\'js/starter.js\'))\nresponse.files.insert(5,URL(\'static\',\'js/bookmark.js\'))\nresponse.include_meta()\nresponse.include_files()\nresponse.write(\'\\r\\n\', escape=False)\nresponse.write(\' <!-- this includes jquery.js, calendar.js/.css and web2py.js -->\\r\\n\\r\\n  \', escape=False)\n# using sidebars need to know what sidebar you want to use\nmc0 = \'col-md-12\'\nmc1 = \'col-md-9\'\nmc2 = \'col-md-6\'\nleft_sidebar_enabled = globals().get(\'left_sidebar_enabled\', False)\nright_sidebar_enabled = globals().get(\'right_sidebar_enabled\', False)\nmiddle_column = {0: mc0, 1: mc1, 2: mc2}[\n(left_sidebar_enabled and 1 or 0)+(right_sidebar_enabled and 1 or 0)]\nresponse.write(\'\\r\\n\\r\\n</head>\\r\\n<!--\\r\\nBODY TAG OPTIONS:\\r\\n=================\\r\\nApply one or more of the following classes to get the\\r\\ndesired effect\\r\\n|---------------------------------------------------------|\\r\\n| SKINS         | skin-blue                               |\\r\\n|               | skin-black                              |\\r\\n|               | skin-purple                             |\\r\\n|               | skin-yellow                             |\\r\\n|               | skin-red                                |\\r\\n|               | skin-green                              |\\r\\n|---------------------------------------------------------|\\r\\n|LAYOUT OPTIONS | fixed                                   |\\r\\n|               | layout-boxed                            |\\r\\n|               | layout-top-nav                          |\\r\\n|               | sidebar-collapse                        |\\r\\n|               | sidebar-mini                            |\\r\\n|---------------------------------------------------------|\\r\\n-->\\r\\n<body class="fixed hold-transition skin-blue sidebar-mini">\\r\\n\\r\\n<div class="wrapper">\\r\\n\\r\\n  <!-- Main Header -->\\r\\n  <header class="main-header">\\r\\n\\r\\n    <!-- Logo -->\\r\\n    <a href="\', escape=False)\nresponse.write(URL(\'default\',\'index\'))\nresponse.write(\'" class="logo">\\r\\n      <!-- mini logo for sidebar mini 50x50 pixels -->\\r\\n      <span class="logo-mini">\\r\\n        \', escape=False)\nresponse.write(response.logo_mini)\nresponse.write(\'\\r\\n      </span>\\r\\n      <!-- logo for regular state and mobile devices -->\\r\\n      <span class="logo-lg">\\r\\n        \', escape=False)\nresponse.write(response.logo)\nresponse.write(\'\\r\\n      </span>\\r\\n    </a>\\r\\n\\r\\n    <!-- Header Navbar -->\\r\\n    <nav class="navbar navbar-static-top" role="navigation">\\r\\n\\r\\n      <!-- Sidebar toggle button-->\\r\\n      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">\\r\\n        <span class="sr-only">Toggle navigation</span>\\r\\n      </a>\\r\\n\\r\\n      <!-- Navbar Right Menu -->\\r\\n      <div class="navbar-custom-menu">\\r\\n        <ul class="nav navbar-nav">\\r\\n\\r\\n          \', escape=False)\nif auth.user and is_user_member(\'admin\'):\n    response.write(\'\\r\\n\\r\\n              <!-- Messages Menu -->\\r\\n              \', escape=False)\n    response.write(LOAD(\'message\', \'menu.load\', ajax=True, content=\'\'))\n    response.write(\'\\r\\n\\r\\n              <!-- Notifications Menu -->\\r\\n              <li class="dropdown notifications-menu">\\r\\n                <!-- Menu toggle button -->\\r\\n                <a href="#" class="dropdown-toggle" data-toggle="dropdown">\\r\\n                  <i class="fa fa-bell-o"></i>\\r\\n                  <span class="label label-warning">1</span>\\r\\n                </a>\\r\\n                <ul class="dropdown-menu">\\r\\n                  <li class="header">You have 1 notifications</li>\\r\\n                  <li>\\r\\n                    <!-- Inner Menu: contains the notifications -->\\r\\n                    <ul class="menu">\\r\\n                      <li><!-- start notification -->\\r\\n                        <a href="#">\\r\\n                          <i class="fa fa-users text-aqua"></i> ABC Investments signed PSA for Loan 1234\\r\\n                        </a>\\r\\n                      </li>\\r\\n                      <!-- end notification -->\\r\\n                    </ul>\\r\\n                  </li>\\r\\n                  <li class="footer"><a href="#">View all</a></li>\\r\\n                </ul>\\r\\n              </li> <!-- /Notifications Menu -->\\r\\n\\r\\n              <!-- Tasks Menu -->\\r\\n              <li class="dropdown tasks-menu">\\r\\n                <!-- Menu Toggle Button -->\\r\\n                <a href="#" class="dropdown-toggle" data-toggle="dropdown">\\r\\n                  <i class="fa fa-flag-o"></i>\\r\\n                  <span class="label label-danger">9</span>\\r\\n                </a>\\r\\n                <ul class="dropdown-menu">\\r\\n                  <li class="header">You have 9 tasks</li>\\r\\n                  <li>\\r\\n                    <!-- Inner menu: contains the tasks -->\\r\\n                    <ul class="menu">\\r\\n                      <li><!-- Task item -->\\r\\n                        <a href="#">\\r\\n                          <!-- Task title and progress text -->\\r\\n                          <h3>\\r\\n                            Review and complete PSA for Loan 1234\\r\\n                            <small class="pull-right">20%</small>\\r\\n                          </h3>\\r\\n                          <!-- The progress bar -->\\r\\n                          <div class="progress xs">\\r\\n                            <!-- Change the css width attribute to simulate progress -->\\r\\n                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">\\r\\n                              <span class="sr-only">20% Complete</span>\\r\\n                            </div>\\r\\n                          </div>\\r\\n                        </a>\\r\\n                      </li>\\r\\n                      <!-- end task item -->\\r\\n                    </ul>\\r\\n                  </li>\\r\\n                  <li class="footer">\\r\\n                    <a href="#">View all tasks</a>\\r\\n                  </li>\\r\\n                </ul>\\r\\n              </li> <!-- /Tasks Menu -->\\r\\n\\r\\n          \', escape=False)\n    pass\nresponse.write(\'\\r\\n\\r\\n          \', escape=False)\nif auth.user:\n    response.write(\'\\r\\n\\r\\n              <!-- User Account Menu -->\\r\\n              <li class="dropdown user user-menu">\\r\\n\\r\\n                <!-- Menu Toggle Button -->\\r\\n                <a href="#" class="dropdown-toggle" data-toggle="dropdown">\\r\\n                  <!-- The user image in the navbar-->\\r\\n                  <img src="\', escape=False)\n    response.write(URL(\'static\',\'img/avatar5.png\'))\n    response.write(\'" class="user-image" alt="User Image">\\r\\n                  <!-- hidden-xs hides the username on small devices so only the image appears. -->\\r\\n                  <span class="hidden-xs">\', escape=False)\n    response.write(auth.user.first_name)\n    response.write(\' \', escape=False)\n    response.write(auth.user.last_name)\n    response.write(\' <span class="caret"></span></span>\\r\\n                </a>\\r\\n\\r\\n                <ul class="dropdown-menu">\\r\\n                  <!-- User Menu Header -->\\r\\n                  <li class="user-header">\\r\\n                    <img src="\', escape=False)\n    response.write(URL(\'static\',\'img/avatar5.png\'))\n    response.write(\'" class="img-circle" alt="User Image">\\r\\n                    <p>\\r\\n                      \', escape=False)\n    response.write(auth.user.first_name)\n    response.write(\' \', escape=False)\n    response.write(auth.user.last_name)\n    response.write(\'\\r\\n                      <small>\', escape=False)\n    response.write(\' | \'.join(auth.user_groups.values()))\n    response.write(\'</small>\\r\\n                    </p>\\r\\n                  </li>\\r\\n                  <!-- User Menu Body -->\\r\\n                  <li class="user-body">\\r\\n                    <div class="row">\\r\\n                      <div class="col-xs-4 text-center">\\r\\n                        <a href="\', escape=False)\n    response.write(URL(\'default\', \'user\', args=[\'profile\'], vars={\'_next\': URL()}))\n    response.write(\'"><i class="fa fa-user"></i><br>Profile</a>\\r\\n                      </div>\\r\\n                      <div class="col-xs-4 text-center">\\r\\n                        <a href="\', escape=False)\n    response.write(URL(\'default\', \'user\', args=[\'change_password\'], vars={\'_next\': URL()}))\n    response.write(\'"><i class="fa fa-key"></i><br>Password</a>\\r\\n                      </div>\\r\\n                      <div class="col-xs-4 text-center">\\r\\n                        <a href="\', escape=False)\n    response.write(URL(\'default\', \'user\', args=[\'logout\'], vars={\'_next\': URL()}))\n    response.write(\'"><i class="fa fa-sign-out"></i><br>Log&nbsp;Out</a>\\r\\n                      </div>\\r\\n                    </div>\\r\\n                    <!-- /.row -->\\r\\n                  </li>\\r\\n                </ul>\\r\\n\\r\\n              </li> <!-- /User Account Menu -->\\r\\n\\r\\n              <!-- Control Sidebar Toggle Button -->\\r\\n              <li>\\r\\n                  <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>\\r\\n              </li>\\r\\n\\r\\n          \', escape=False)\nelse:\n    response.write(\'\\r\\n\\r\\n              <!-- Log In Menu -->\\r\\n              <li class="dropdown user user-menu">\\r\\n\\r\\n                <!-- Menu toggle button -->\\r\\n                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>\\r\\n\\r\\n                <ul class="dropdown-menu">\\r\\n                  \', escape=False)\n    if not \'register\' in auth.settings.actions_disabled:\n        response.write(\'\\r\\n                    <li class="user-body">\\r\\n                      <a href="\', escape=False)\n        response.write(URL(\'default\', \'user\', args=[\'register\'], vars={\'_next\': URL()}))\n        response.write(\'"><i class="fa fa-pencil-square-o"></i>Register</a>\\r\\n                    </li>\\r\\n                  \', escape=False)\n        pass\n    response.write(\'\\r\\n                  <li class="user-body">\\r\\n                    <a href="\', escape=False)\n    response.write(URL(\'default\', \'user\', args=[\'request_reset_password\'], vars={\'_next\': URL()}))\n    response.write(\'"><i class="fa fa-key fa-fw"></i>Forgot Password?</a>\\r\\n                    <a href="\', escape=False)\n    response.write(URL(\'default\', \'user\', args=[\'retrieve_username\'], vars={\'_next\': URL()}))\n    response.write(\'"><i class="fa fa-user fa-fw"></i>Forgot Username?</a>\\r\\n                  </li>\\r\\n                  <li class="user-body">\\r\\n                    <a href="\', escape=False)\n    response.write(URL(\'default\', \'user\', args=[\'login\'], vars={\'_next\': URL()}))\n    response.write(\'"><i class="fa fa-sign-in fa-fw"></i>Log In</a>\\r\\n                  </li>\\r\\n                </ul>\\r\\n\\r\\n              </li> <!-- /Log In Menu -->\\r\\n\\r\\n          \', escape=False)\n    pass\nresponse.write(\'\\r\\n\\r\\n        </ul> <!-- /.navbar-nav -->\\r\\n      </div> <!-- /.navbar-custom-menu -->\\r\\n    </nav>\\r\\n  </header>\\r\\n\\r\\n  <!-- Left side column. contains the logo and sidebar -->\\r\\n  <aside class="main-sidebar">\\r\\n\\r\\n    <!-- sidebar: style can be found in sidebar.less -->\\r\\n    <section class="sidebar">\\r\\n\\r\\n      \', escape=False)\nif auth.user:\n    response.write(\'\\r\\n\\r\\n          <!-- Sidebar user panel (optional) -->\\r\\n          <div class="user-panel">\\r\\n              <div class="pull-left image">\\r\\n                  <img src="\', escape=False)\n    response.write(URL(\'static\',\'img/avatar5.png\'))\n    response.write(\'" class="img-circle" alt="User Image">\\r\\n              </div>\\r\\n              <div class="pull-left info">\\r\\n                  <p>\\r\\n                  \', escape=False)\n    response.write(auth.user.first_name)\n    response.write(\' \', escape=False)\n    response.write(auth.user.last_name)\n    response.write(\'\\r\\n                  </p>\\r\\n                  <!-- Status -->\\r\\n                  <a href="#"><i class="fa fa-circle text-success"></i> Online</a>\\r\\n              </div>\\r\\n          </div>\\r\\n          <!--  /sidebar user panel -->\\r\\n\\r\\n          <!-- search form (Optional) -->\\r\\n          \', escape=False)\n    if auth.user and is_user_member(\'admin\'):\n        response.write(\'\\r\\n              <form action="\', escape=False)\n        response.write(URL(\'default\', \'search\'))\n        response.write(\'" method="get" class="sidebar-form">\\r\\n                  <div class="input-group">\\r\\n                      <input type="text" name="q" class="form-control" placeholder="Search...">\\r\\n                      <span class="input-group-btn">\\r\\n                        <button type="submit" name="search" id="search-btn" class="btn btn-flat">\\r\\n                            <i class="fa fa-search"></i>\\r\\n                        </button>\\r\\n                      </span>\\r\\n                  </div>\\r\\n              </form>\\r\\n          \', escape=False)\n        pass\n    response.write(\'\\r\\n          <!-- /search form -->\\r\\n\\r\\n      \', escape=False)\n    pass\nresponse.write(\'\\r\\n\\r\\n      <!-- Sidebar Menu -->\\r\\n      \', escape=False)\n#hidden = None if auth.user else \'hidden\'\nresponse.write(\'\\r\\n\\r\\n\', escape=False)\nif auth.user and is_user_member(\'admin\'):\n    response.write(\'\\r\\n\\r\\n<ul class="sidebar-menu">\\r\\n\\r\\n    <li class="header">Dogs &amp; Owners</li>\\r\\n\\r\\n    <li class="treeview">\\r\\n    \', escape=False)\n    response.write(sidebar_menu_item(\'Dogs\', icon=\'suitcase\'))\n    response.write(\'\\r\\n        <ul class="treeview-menu">\\r\\n        \', escape=False)\n    response.write(sidebar_menu_item(\'View Dogs\', URL(\'dog\', \'list\'), icon=\'list\'))\n    response.write(\'\\r\\n        \', escape=False)\n    response.write(sidebar_menu_item(\'Create Dog\', URL(\'dog\', \'create\'), icon=\'pencil-square-o\'))\n    response.write(\'\\r\\n        </ul>\\r\\n    </li>\\r\\n\\r\\n    <li class="treeview">\\r\\n    \', escape=False)\n    response.write(sidebar_menu_item(\'Owners\', icon=\'university\'))\n    response.write(\'\\r\\n        <ul class="treeview-menu">\\r\\n        \', escape=False)\n    response.write(sidebar_menu_item(\'View Owners\', URL(\'person\', \'list\'), icon=\'list\'))\n    response.write(\'\\r\\n        \', escape=False)\n    response.write(sidebar_menu_item(\'Create Owner\', URL(\'person\', \'create\'), icon=\'pencil-square-o\'))\n    response.write(\'\\r\\n        </ul>\\r\\n    </li>\\r\\n\\r\\n    <li class="treeview">\\r\\n    \', escape=False)\n    response.write(sidebar_menu_item(\'Dog Owners\', icon=\'university\'))\n    response.write(\'\\r\\n        <ul class="treeview-menu">\\r\\n        \', escape=False)\n    response.write(sidebar_menu_item(\'View Dog Owners\', URL(\'dog_owner\', \'list\'), icon=\'list\'))\n    response.write(\'\\r\\n        \', escape=False)\n    response.write(sidebar_menu_item(\'Create Dog Owner\', URL(\'dog_owner\', \'create\'), icon=\'pencil-square-o\'))\n    response.write(\'\\r\\n        </ul>\\r\\n    </li>\\r\\n\\r\\n    <li class="treeview \', escape=False)\n    response.write(user_visibility(\'Admin\'))\n    response.write(\'">\\r\\n    \', escape=False)\n    response.write(sidebar_menu_item(\'Admin\', icon=\'gears\'))\n    response.write(\'\\r\\n        <ul class="treeview-menu">\\r\\n        \', escape=False)\n    response.write(sidebar_menu_item(\'Manage Content\', URL(\'content\',\'list\'), icon=\'file-text-o\'))\n    response.write(\'\\r\\n          \', escape=False)\n    response.write(sidebar_menu_item(\'Manage Users\', URL(\'appadmin\',\'manage/users\'), icon=\'users\'))\n    response.write(\'\\r\\n        </ul>\\r\\n    </li>\\r\\n\\r\\n    <li class="treeview \', escape=False)\n    response.write(user_visibility(\'Admin\'))\n    response.write(\'">\\r\\n    \', escape=False)\n    response.write(sidebar_menu_item(\'Super Admin\', icon=\'gears\'))\n    response.write(\'\\r\\n        <ul class="treeview-menu">\\r\\n        \', escape=False)\n    response.write(sidebar_menu_item(\'Manage Auth\', URL(\'appadmin\',\'manage/auth\'), icon=\'wrench\'))\n    response.write(\'\\r\\n          \', escape=False)\n    response.write(sidebar_menu_item(\'Manage Database\', URL(\'appadmin\',\'manage/db\'), icon=\'database\'))\n    response.write(\'\\r\\n          \', escape=False)\n    response.write(sidebar_menu_item(\'Super Admin!\', URL(\'appadmin\',\'#\'), icon=\'cog\'))\n    response.write(\'\\r\\n        </ul>\\r\\n    </li>\\r\\n\\r\\n\', escape=False)\n    for m in response.menu:\n        response.write(\'\\r\\n    <li class="treeview">\\r\\n    \', escape=False)\n        response.write(sidebar_menu_item(m[0][\'nome_master\'], icon=m[0][\'iconemaster\']))\n        response.write(\'\\r\\n        <ul class="treeview-menu">\\r\\n        \', escape=False)\n        for x in m[1]:\n            response.write(\'\\r\\n            \', escape=False)\n            response.write(sidebar_menu_item(x[\'nome\'], x[\'url\'], icon=x[\'icon\']))\n            response.write(\'\\r\\n        </ul>\\r\\n    </li>\\r\\n    \', escape=False)\n            pass\n        response.write(\'\\r\\n  \\r\\n\\r\\n    \\r\\n</ul>\\r\\n\\r\\n\', escape=False)\n        pass\n    response.write(\'\\r\\n\\r\\n<!-- Company Info for Guests -->\\r\\n\\r\\n<ul class="sidebar-menu">\\r\\n\\r\\n    <li class="header">COMPANY</li>\\r\\n\\r\\n\', escape=False)\n    response.write(sidebar_menu_item(\'About\', URL(\'default\', \'about\'), icon=\'book\'))\n    response.write(\'\\r\\n\', escape=False)\n    response.write(sidebar_menu_item(\'Privacy\', URL(\'default\', \'privacy\'), icon=\'book\'))\n    response.write(\'\\r\\n\', escape=False)\n    response.write(sidebar_menu_item(\'Terms of Use\', URL(\'default\', \'tou\'), icon=\'book\'))\n    response.write(\'\\r\\n\\r\\n</ul>\\r\\n\', escape=False)\n    response.write(\'\\r\\n      <!-- /Sidebar Menu -->\\r\\n\\r\\n    </section>\\r\\n    <!-- /.sidebar -->\\r\\n  </aside>\\r\\n\\r\\n  <!-- Content Wrapper. Contains page content -->\\r\\n  <div class="content-wrapper">\\r\\n\\r\\n    <!-- response.flash message -->\\r\\n    \', escape=False)\n    if response.flash:\n        response.write(\'\\r\\n    <section class="content-header">\\r\\n      <div class="alert alert-warning alert-dismissible fade in" role="alert">\\r\\n        <button type="button" class="close" data-dismiss="alert" aria-label="Close">\\r\\n          <span aria-hidden="true">\\xc3\\x97</span>\\r\\n        </button>\\r\\n        <strong>Holy guacamole!</strong> \', escape=False)\n        response.write(response.flash)\n        response.write(\'\\r\\n      </div>\\r\\n    </section>\\r\\n    \', escape=False)\n        pass\n    response.write(\'\\r\\n\\r\\n    <!-- Content Header (Page header) -->\\r\\n    \', escape=False)\n    if response.view_title:\n        response.write(\'\\r\\n    <section class="content-header">\\r\\n\\r\\n      <h1>\\r\\n\\r\\n        \', escape=False)\n        response.write(response.view_title)\n        response.write(\'\\r\\n        <small>\', escape=False)\n        response.write(response.subtitle or \'\')\n        response.write(\'</small>\\r\\n\\r\\n        \', escape=False)\n        if auth.user:\n            response.write(\'\\r\\n<button type="button"\\r\\n  class="bookmark-btn btn btn-default btn-sm \', escape=False)\n            response.write(response.bookmark.is_active())\n            response.write(\'\\r\\n    \', escape=False)\n            # ="active" if auth.user and auth.user.bookmarks and response.bookmark[\'key\'] in auth.user.bookmarks else "inactive"\n            response.write(\'"\\r\\n  data-ajax-add="\', escape=False)\n            response.write(URL(\'bookmark\', \'add\'))\n            response.write(\'"\\r\\n  data-ajax-delete="\', escape=False)\n            response.write(URL(\'bookmark\', \'delete\'))\n            response.write(\'"\\r\\n  data-bookmark-obj="\', escape=False)\n            response.write(response.bookmark)\n            response.write(\'">\\r\\n  <!-- data-context="\', escape=False)\n            response.write(request.controller)\n            response.write(\'"\\r\\n  data-context-action="\', escape=False)\n            response.write(request.function)\n            response.write(\'"\\r\\n  data-context-id="\', escape=False)\n            response.write(request.args[0] if request.args else 0)\n            response.write(\'" -->\\r\\n\\r\\n</button>\\r\\n\', escape=False)\n            pass\n        response.write(\'\\r\\n\', escape=False)\n        response.write(\'\\r\\n\\r\\n      </h1>\\r\\n\\r\\n      <ol class="breadcrumb">\\r\\n        \', escape=False)\n        for crumb in session.breadcrumbs:\n            response.write(\'\\r\\n          <li><a href="\', escape=False)\n            response.write(crumb[\'url\'])\n            response.write(\'"><i class="fa fa-\', escape=False)\n            response.write(crumb[\'icon\'])\n            response.write(\'"></i>\', escape=False)\n            response.write(crumb[\'label\'])\n            response.write(\'</a></li>\\r\\n        \', escape=False)\n            pass\n        response.write(\'\\r\\n      </ol>\\r\\n\\r\\n    </section>\\r\\n    \', escape=False)\n        pass\n    response.write(\'\\r\\n\\r\\n    <!-- Main content -->\\r\\n    <section class="content">\\r\\n\\r\\n      <!-- Your Page Content Here -->\\r\\n      <div class="row">\\r\\n\\r\\n        \', escape=False)\n    if left_sidebar_enabled:\n        response.write(\'\\r\\n          <div class="col-md-4 col-sm-6 col-xs-12">\\r\\n              \', escape=False)\n        response.write(\'\\r\\n              \', escape=False)\n        response.write(\'\\r\\n          </div>\\r\\n        \', escape=False)\n        pass\n    response.write(\'\\r\\n\\r\\n        <div class="col-md-12 col-sm-12 col-xs-12">\\r\\n          \', escape=False)\n    response.write(\'\\r\\n            \', escape=False)\n    response.write(\'\\r\\n\\r\\n<script><!--\\r\\n    jQuery(document).ready(function(){\\r\\n    jQuery("table.sortable tbody tr").mouseover( function() {\\r\\n    jQuery(this).addClass("highlight"); }).mouseout( function() {\\r\\n    jQuery(this).removeClass("highlight"); });\\r\\n    jQuery(\\\'table.sortable tbody tr:odd\\\').addClass(\\\'odd\\\');\\r\\n    jQuery(\\\'table.sortable tbody tr:even\\\').addClass(\\\'even\\\');\\r\\n});\\r\\n//--></script>\\r\\n\\r\\n\', escape=False)\n    if request.function==\'index\':\n        response.write(\'\\r\\n<h2>\', escape=False)\n        response.write(T("Available Databases and Tables"))\n        response.write(\'</h2>\\r\\n  \', escape=False)\n        if not databases:\n            response.write(T("No databases in this application"))\n            pass\n        response.write(\'\\r\\n  <ul class="nav nav-tabs" id="myTab">\\r\\n  <li class="active" ><a href="#alltables" data-toggle="tab">Tables</a></li>\\r\\n  <li><a href="#hooks" data-toggle="tab">Hooks</a></li>\\r\\n  </ul>\\r\\n  <div class="tab-content">\\r\\n      <div class="tab-pane active" id="alltables">\\r\\n        <table class="table">\\r\\n          \', escape=False)\n        for db in sorted(databases):\n            response.write(\'\\r\\n            \', escape=False)\n            for table in databases[db].tables:\n                response.write(\'\\r\\n              \', escape=False)\n                qry=\'%s.%s.id>0\'%(db,table)\n                response.write(\'\\r\\n              \', escape=False)\n                tbl=databases[db][table]\n                response.write(\'\\r\\n              \', escape=False)\n                if hasattr(tbl,\'_primarykey\'):\n                    response.write(\'\\r\\n                \', escape=False)\n                    if tbl._primarykey:\n                        response.write(\'\\r\\n                    \', escape=False)\n                        firstkey=tbl[tbl._primarykey[0]]\n                        response.write(\'\\r\\n                    \', escape=False)\n                        if firstkey.type in [\'string\',\'text\']:\n                            response.write(\'\\r\\n                      \', escape=False)\n                            qry=\'%s.%s.%s!=""\'%(db,table,firstkey.name)\n                            response.write(\'\\r\\n                    \', escape=False)\n                        else:\n                            response.write(\'\\r\\n                      \', escape=False)\n                            qry=\'%s.%s.%s>0\'%(db,table,firstkey.name)\n                            response.write(\'\\r\\n                    \', escape=False)\n                            pass\n                        response.write(\'\\r\\n                \', escape=False)\n                    else:\n                        response.write(\'\\r\\n                     \', escape=False)\n                        qry=\'\'\n                        response.write(\'\\r\\n                \', escape=False)\n                        pass\n                    response.write(\'\\r\\n              \', escape=False)\n                    pass\n                response.write(\'\\r\\n          <tr>\\r\\n            <th style="font-size: 1.75em;">\\r\\n              \', escape=False)\n                response.write(A("%s.%s" % (db,table),_href=URL(\'select\',args=[db],vars=dict(query=qry))))\n                response.write(\'\\r\\n            </th>\\r\\n            <td>\\r\\n              \', escape=False)\n                response.write(A(str(T(\'New Record\')),_href=URL(\'insert\',args=[db,table]),_class="btn btn-default"))\n                response.write(\'\\r\\n            </td>\\r\\n          </tr>\\r\\n          \', escape=False)\n                pass\n            response.write(\'\\r\\n          \', escape=False)\n            pass\n        response.write(\'\\r\\n        </table>\\r\\n      </div>\\r\\n      <div class="tab-pane" id="hooks">\\r\\n      \', escape=False)\n        response.write(LOAD(\'appadmin\', \'hooks\', ajax=True))\n        response.write(\'\\r\\n      </div>\\r\\n  </div>\\r\\n\', escape=False)\n    elif request.function==\'select\':\n        response.write(\'\\r\\n  <h2>\', escape=False)\n        response.write(XML(str(T("Database %s select"))%A(request.args[0],_href=URL(\'index\'))))\n        response.write(\'\\r\\n  </h2>\\r\\n  \', escape=False)\n        if tb:\n            response.write(\'\\r\\n  <h3>\', escape=False)\n            response.write(T(\'Traceback\'))\n            response.write(\'</h3>\\r\\n  <pre>\\r\\n    \', escape=False)\n            response.write(tb)\n            response.write(\'\\r\\n  </pre>\\r\\n  \', escape=False)\n            pass\n        response.write(\'\\r\\n  \', escape=False)\n        if table:\n            response.write(\'\\r\\n  \', escape=False)\n            response.write(A(str(T(\'New Record\')),_href=URL(\'insert\',args=[request.args[0],table]),_class="btn btn-default"))\n            response.write(\'<br/><br/>\\r\\n    <h3>\', escape=False)\n            response.write(T("Rows in Table"))\n            response.write(\'</h3><br/>\\r\\n   \', escape=False)\n        else:\n            response.write(\'\\r\\n    <h3>\', escape=False)\n            response.write(T("Rows selected"))\n            response.write(\'</h3><br/>\\r\\n   \', escape=False)\n            pass\n        response.write(\'\\r\\n   \', escape=False)\n        response.write(form)\n        response.write(\'\\r\\n   <p>\', escape=False)\n        response.write(T(\'The "query" is a condition like "db.table1.field1==\\\'value\\\'". Something like "db.table1.field1==db.table2.field2" results in a SQL JOIN.\'))\n        response.write(\'<br/>\\r\\n      \', escape=False)\n        response.write(T(\'Use (...)&(...) for AND, (...)|(...) for OR, and ~(...)  for NOT to build more complex queries.\'))\n        response.write(\'<br/>\\r\\n      \', escape=False)\n        response.write(T(\'"update" is an optional expression like "field1=\\\'newvalue\\\'". You cannot update or delete the results of a JOIN\'))\n        response.write(\'</p>\\r\\n    <br/><br/>\\r\\n    <h4>\', escape=False)\n        response.write(T("%s selected", nrows))\n        response.write(\'</h4>\\r\\n    \', escape=False)\n        if start>0:\n            response.write(A(T(\'previous %s rows\') % step,_href=URL(\'select\',args=request.args[0],vars=dict(start=start-step)),_class="btn btn-default"))\n            pass\n        response.write(\'\\r\\n    \', escape=False)\n        if stop<nrows:\n            response.write(A(T(\'next %s rows\') % step,_href=URL(\'select\',args=request.args[0],vars=dict(start=start+step)),_class="btn btn-default"))\n            pass\n        response.write(\'\\r\\n    \', escape=False)\n        if rows:\n            response.write(\'\\r\\n       <div style="overflow:auto; width:80%;">\\r\\n       \', escape=False)\n            linkto = lambda f, t, r: URL(\'update\', args=[request.args[0], r, f]) if f else "#"\n            response.write(\'\\r\\n       \', escape=False)\n            upload=URL(\'download\',args=request.args[0])\n            response.write(\'\\r\\n       \', escape=False)\n            response.write(SQLTABLE(rows,linkto,upload,orderby=True,_class=\'sortable\'))\n            response.write(\'\\r\\n       </div>\\r\\n    \', escape=False)\n            pass\n        response.write(\'\\r\\n    <br/><br/><h3>\', escape=False)\n        response.write(T("Import/Export"))\n        response.write(\'</h3><br/>\\r\\n    <a href="\', escape=False)\n        response.write(URL(\'csv\',args=request.args[0],vars=dict(query=query)))\n        response.write(\'" class="btn btn-default">\', escape=False)\n        response.write(T("export as csv file"))\n        response.write(\'</a>\\r\\n  \', escape=False)\n        response.write(formcsv or \'\')\n        response.write(\'\\r\\n\\r\\n\', escape=False)\n    elif request.function==\'insert\':\n        response.write(\'\\r\\n  <h2>\', escape=False)\n        response.write(T("Database"))\n        response.write(\' \', escape=False)\n        response.write(A(request.args[0],_href=URL(\'index\')))\n        response.write(\'\\r\\n    \', escape=False)\n        if hasattr(table,\'_primarykey\'):\n            response.write(\'\\r\\n      \', escape=False)\n            fieldname=table._primarykey[0]\n            response.write(\'\\r\\n      \', escape=False)\n            dbname=request.args[0]\n            response.write(\'\\r\\n      \', escape=False)\n            tablename=request.args[1]\n            response.write(\'\\r\\n      \', escape=False)\n            cond = table[fieldname].type in [\'string\',\'text\'] and \'!=""\' or \'>0\'\n            response.write(\'\\r\\n      \', escape=False)\n            response.write(T("Table"))\n            response.write(\' \', escape=False)\n            response.write(A(tablename,_href=URL(\'select\',args=dbname,vars=dict(query=\'%s.%s.%s%s\'%(dbname,tablename,fieldname,cond)))))\n            response.write(\'\\r\\n    \', escape=False)\n        else:\n            response.write(\'\\r\\n      \', escape=False)\n            response.write(T("Table"))\n            response.write(\' \', escape=False)\n            response.write(A(request.args[1],_href=URL(\'select\',args=request.args[0],vars=dict(query=\'%s.%s.id>0\'%tuple(request.args[:2])))))\n            response.write(\'\\r\\n    \', escape=False)\n            pass\n        response.write(\'\\r\\n  </h2>\\r\\n  <h3>\', escape=False)\n        response.write(T("New Record"))\n        response.write(\'</h3><br/>\\r\\n  \', escape=False)\n        response.write(form)\n        response.write(\'\\r\\n\', escape=False)\n    elif request.function==\'update\':\n        response.write(\'\\r\\n  <h2>\', escape=False)\n        response.write(T("Database"))\n        response.write(\' \', escape=False)\n        response.write(A(request.args[0],_href=URL(\'index\')))\n        response.write(\'\\r\\n    \', escape=False)\n        if hasattr(table,\'_primarykey\'):\n            response.write(\'\\r\\n      \', escape=False)\n            fieldname=request.vars.keys()[0]\n            response.write(\'\\r\\n      \', escape=False)\n            dbname=request.args[0]\n            response.write(\'\\r\\n      \', escape=False)\n            tablename=request.args[1]\n            response.write(\'\\r\\n      \', escape=False)\n            cond = table[fieldname].type in [\'string\',\'text\'] and \'!=""\' or \'>0\'\n            response.write(\'\\r\\n      \', escape=False)\n            response.write(T("Table"))\n            response.write(\' \', escape=False)\n            response.write(A(tablename,_href=URL(\'select\',args=dbname,vars=dict(query=\'%s.%s.%s%s\'%(dbname,tablename,fieldname,cond)))))\n            response.write(\'\\r\\n      \', escape=False)\n            response.write(T("Record"))\n            response.write(\' \', escape=False)\n            response.write(A(\'%s=%s\'%request.vars.items()[0],_href=URL(\'update\',args=request.args[:2],vars=request.vars)))\n            response.write(\'\\r\\n    \', escape=False)\n        else:\n            response.write(\'\\r\\n      \', escape=False)\n            response.write(T("Table"))\n            response.write(\' \', escape=False)\n            response.write(A(request.args[1],_href=URL(\'select\',args=request.args[0],vars=dict(query=\'%s.%s.id>0\'%tuple(request.args[:2])))))\n            response.write(\'\\r\\n      \', escape=False)\n            response.write(T("Record id"))\n            response.write(\' \', escape=False)\n            response.write(A(request.args[2],_href=URL(\'update\',args=request.args[:3])))\n            response.write(\'\\r\\n    \', escape=False)\n            pass\n        response.write(\'\\r\\n  </h2>\\r\\n  <h3>\', escape=False)\n        response.write(T("Edit current record"))\n        response.write(\'</h3><br/><br/>\', escape=False)\n        response.write(form)\n        response.write(\'\\r\\n\\r\\n\', escape=False)\n    elif request.function==\'state\':\n        response.write(\'\\r\\n  <h2>\', escape=False)\n        response.write(T("Internal State"))\n        response.write(\'</h2>\\r\\n  <h3>\', escape=False)\n        response.write(T("Current request"))\n        response.write(\'</h3>\\r\\n  \', escape=False)\n        response.write(BEAUTIFY(request))\n        response.write(\'\\r\\n  <br/><h3>\', escape=False)\n        response.write(T("Current response"))\n        response.write(\'</h3>\\r\\n  \', escape=False)\n        response.write(BEAUTIFY(response))\n        response.write(\'\\r\\n  <br/><h3>\', escape=False)\n        response.write(T("Current session"))\n        response.write(\'</h3>\\r\\n  \', escape=False)\n        response.write(BEAUTIFY(session))\n        response.write(\'\\r\\n\\r\\n\\r\\n\', escape=False)\n    elif request.function == \'ccache\':\n        response.write(\'\\r\\n<h2>\', escape=False)\n        T("Cache")\n        response.write(\'</h2>\\r\\n<div class="list">\\r\\n\\r\\n  <div class="list-header">\\r\\n    <h3>\', escape=False)\n        T("Statistics")\n        response.write(\'</h3>\\r\\n  </div>\\r\\n\\r\\n  <div class="content">\\r\\n    <h4>\', escape=False)\n        response.write(T("Overview"))\n        response.write(\'</h4>\\r\\n    <p>\', escape=False)\n        response.write(T.M("Number of entries: **%s**", total[\'entries\']))\n        response.write(\'</p>\\r\\n    \', escape=False)\n        if total[\'entries\'] > 0:\n            response.write(\'\\r\\n    <p>\', escape=False)\n            response.write(T.M("Hit Ratio: **%(ratio)s%%** (**%(hits)s** %%{hit(hits)} and **%(misses)s** %%{miss(misses)})",\n            dict( ratio=total[\'ratio\'], hits=total[\'hits\'], misses=total[\'misses\'])))\n            response.write(\'\\r\\n    </p>\\r\\n    <p>\\r\\n      \', escape=False)\n            response.write(T("Size of cache:"))\n            response.write(\'\\r\\n      \', escape=False)\n            if object_stats:\n                response.write(\'\\r\\n        \', escape=False)\n                response.write(T.M("**%(items)s** %%{item(items)}, **%(bytes)s** %%{byte(bytes)}", dict(items=total[\'objects\'], bytes=total[\'bytes\'])))\n                response.write(\'\\r\\n        \', escape=False)\n                if total[\'bytes\'] > 524287:\n                    response.write(\'\\r\\n          \', escape=False)\n                    response.write(T.M("(**%.0d MB**)", total[\'bytes\'] / 1048576))\n                    response.write(\'\\r\\n        \', escape=False)\n                    pass\n                response.write(\'\\r\\n      \', escape=False)\n            else:\n                response.write(\'\\r\\n        \', escape=False)\n                response.write(T.M("**not available** (requires the Python [[guppy http://pypi.python.org/pypi/guppy/ popup]] library)"))\n                response.write(\'\\r\\n      \', escape=False)\n                pass\n            response.write(\'\\r\\n    </p>\\r\\n    <p>\\r\\n      \', escape=False)\n            response.write(T.M("Cache contains items up to **%(hours)02d** %%{hour(hours)} **%(min)02d** %%{minute(min)} **%(sec)02d** %%{second(sec)} old.",\n            dict(hours=total[\'oldest\'][0], min=total[\'oldest\'][1], sec=total[\'oldest\'][2])))\n            response.write(\'\\r\\n    </p>\\r\\n    \', escape=False)\n            response.write(BUTTON(T(\'Cache Keys\'), _onclick=\'jQuery("#all_keys").toggle().toggleClass( "w2p_hidden" );\'))\n            response.write(\'\\r\\n    <div class="w2p_hidden" id="all_keys">\\r\\n      \', escape=False)\n            response.write(total[\'keys\'])\n            response.write(\'\\r\\n    </div>\\r\\n    <br />\\r\\n    \', escape=False)\n            pass\n        response.write(\'\\r\\n\\r\\n    <h4>\', escape=False)\n        response.write(T("RAM"))\n        response.write(\'</h4>\\r\\n    <p>\', escape=False)\n        response.write(T.M("Number of entries: **%s**", ram[\'entries\']))\n        response.write(\'</p>\\r\\n    \', escape=False)\n        if ram[\'entries\'] > 0:\n            response.write(\'\\r\\n    <p>\', escape=False)\n            response.write(T.M("Hit Ratio: **%(ratio)s%%** (**%(hits)s** %%{hit(hits)} and **%(misses)s** %%{miss(misses)})",\n            dict( ratio=ram[\'ratio\'], hits=ram[\'hits\'], misses=ram[\'misses\'])))\n            response.write(\'\\r\\n    </p>\\r\\n    <p>\\r\\n      \', escape=False)\n            response.write(T("Size of cache:"))\n            response.write(\'\\r\\n      \', escape=False)\n            if object_stats:\n                response.write(\'\\r\\n        \', escape=False)\n                response.write(T.M("**%(items)s** items, **%(bytes)s** %%{byte(bytes)}", dict(items=ram[\'objects\'], bytes=ram[\'bytes\'])))\n                response.write(\'\\r\\n        \', escape=False)\n                if ram[\'bytes\'] > 524287:\n                    response.write(\'\\r\\n          \', escape=False)\n                    response.write(T.M("(**%.0d MB**)", ram[\'bytes\'] / 10485576))\n                    response.write(\'\\r\\n        \', escape=False)\n                    pass\n                response.write(\'\\r\\n      \', escape=False)\n            else:\n                response.write(\'\\r\\n        \', escape=False)\n                response.write(T.M("``**not available**``:red (requires the Python [[guppy http://pypi.python.org/pypi/guppy/ popup]] library)"))\n                response.write(\'\\r\\n      \', escape=False)\n                pass\n            response.write(\'\\r\\n    </p>\\r\\n    <p>\\r\\n      \', escape=False)\n            response.write(T.M("RAM contains items up to **%(hours)02d** %%{hour(hours)} **%(min)02d** %%{minute(min)} **%(sec)02d** %%{second(sec)} old.",\n            dict(hours=ram[\'oldest\'][0], min=ram[\'oldest\'][1], sec=ram[\'oldest\'][2])))\n            response.write(\'\\r\\n    </p>\\r\\n    \', escape=False)\n            response.write(BUTTON(T(\'RAM Cache Keys\'), _onclick=\'jQuery("#ram_keys").toggle().toggleClass( "w2p_hidden" );\'))\n            response.write(\'\\r\\n    <div class="w2p_hidden" id="ram_keys">\\r\\n      \', escape=False)\n            response.write(ram[\'keys\'])\n            response.write(\'\\r\\n    </div>\\r\\n    <br />\\r\\n    \', escape=False)\n            pass\n        response.write(\'\\r\\n\\r\\n    <h4>\', escape=False)\n        response.write(T("DISK"))\n        response.write(\'</h4>\\r\\n    <p>\', escape=False)\n        response.write(T.M("Number of entries: **%s**", disk[\'entries\']))\n        response.write(\'</p>\\r\\n    \', escape=False)\n        if disk[\'entries\'] > 0:\n            response.write(\'\\r\\n      <p>\\r\\n      \', escape=False)\n            response.write(T.M("Hit Ratio: **%(ratio)s%%** (**%(hits)s** %%{hit(hits)} and **%(misses)s** %%{miss(misses)})",\n            dict(ratio=disk[\'ratio\'], hits=disk[\'hits\'], misses=disk[\'misses\'])))\n            response.write(\'\\r\\n      </p>\\r\\n      <p>\\r\\n      \', escape=False)\n            response.write(T("Size of cache:"))\n            response.write(\'\\r\\n      \', escape=False)\n            if object_stats:\n                response.write(\'\\r\\n        \', escape=False)\n                response.write(T.M("**%(items)s** %%{item(items)}, **%(bytes)s** %%{byte(bytes)}", dict( items=disk[\'objects\'], bytes=disk[\'bytes\'])))\n                response.write(\'\\r\\n        \', escape=False)\n                if disk[\'bytes\'] > 524287:\n                    response.write(\'\\r\\n          \', escape=False)\n                    response.write(T.M("(**%.0d MB**)", disk[\'bytes\'] / 1048576))\n                    response.write(\'\\r\\n        \', escape=False)\n                    pass\n                response.write(\'\\r\\n      \', escape=False)\n            else:\n                response.write(\'\\r\\n        \', escape=False)\n                response.write(T.M("``**not available**``:red (requires the Python [[guppy http://pypi.python.org/pypi/guppy/ popup]] library)"))\n                response.write(\'\\r\\n      \', escape=False)\n                pass\n            response.write(\'\\r\\n      </p>\\r\\n      <p>\\r\\n      \', escape=False)\n            response.write(T.M("DISK contains items up to **%(hours)02d** %%{hour(hours)} **%(min)02d** %%{minute(min)} **%(sec)02d** %%{second(sec)} old.",\n            dict(hours=disk[\'oldest\'][0], min=disk[\'oldest\'][1], sec=disk[\'oldest\'][2])))\n            response.write(\'\\r\\n      </p>\\r\\n      \', escape=False)\n            response.write(BUTTON(T(\'Disk Cache Keys\'), _onclick=\'jQuery("#disk_keys").toggle().toggleClass( "w2p_hidden" );\'))\n            response.write(\'\\r\\n      <div class="w2p_hidden" id="disk_keys">\\r\\n      \', escape=False)\n            response.write(disk[\'keys\'])\n            response.write(\'\\r\\n      </div>\\r\\n      <br />\\r\\n    \', escape=False)\n            pass\n        response.write(\'\\r\\n  </div>\\r\\n\\r\\n  <div class="list-header">\\r\\n    <h3>\', escape=False)\n        response.write(T("Manage Cache"))\n        response.write(\'</h3>\\r\\n  </div>\\r\\n\\r\\n  <div class="content">\\r\\n    <p>\\r\\n      \', escape=False)\n        response.write(form)\n        response.write(\'\\r\\n    </p>\\r\\n  </div>\\r\\n</div>\\r\\n<div class="clear"></div>\\r\\n\', escape=False)\n        pass\n    response.write(\'\\r\\n\\r\\n\', escape=False)\n    if request.function==\'graph_model\':\n        response.write(\'\\r\\n<h2>\', escape=False)\n        response.write(T("Graph Model"))\n        response.write(\'</h2>\\r\\n  \', escape=False)\n        if not pgv:\n            response.write(\'\\r\\n    \', escape=False)\n            response.write(T(\'pygraphviz library not found\'))\n            response.write(\'\\r\\n  \', escape=False)\n        elif not databases:\n            response.write(\'\\r\\n    \', escape=False)\n            response.write(T("No databases in this application"))\n            response.write(\'\\r\\n  \', escape=False)\n        else:\n            response.write(\'\\r\\n    <div class="btn-group">\\r\\n      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">\\r\\n        <i class="icon-download"></i> \', escape=False)\n            response.write(T(\'Save model as...\'))\n            response.write(\'\\r\\n        <span class="caret"></span>\\r\\n      </a>\\r\\n      <ul class="dropdown-menu">\\r\\n          <li><a href="\', escape=False)\n            response.write(URL(\'appadmin\', \'bg_graph_model\', args=[\'png\']))\n            response.write(\'">png</a></li>\\r\\n          <li><a href="\', escape=False)\n            response.write(URL(\'appadmin\', \'bg_graph_model\', args=[\'svg\']))\n            response.write(\'">svg</a></li>\\r\\n          <li><a href="\', escape=False)\n            response.write(URL(\'appadmin\', \'bg_graph_model\', args=[\'pdf\']))\n            response.write(\'">pdf</a></li>\\r\\n          <li><a href="\', escape=False)\n            response.write(URL(\'appadmin\', \'bg_graph_model\', args=[\'ps\']))\n            response.write(\'">ps</a></li>\\r\\n          <li><a href="\', escape=False)\n            response.write(URL(\'appadmin\', \'bg_graph_model\', args=[\'dot\']))\n            response.write(\'">dot</a></li>\\r\\n      </ul>\\r\\n    </div>\\r\\n    <br />\\r\\n    \', escape=False)\n            response.write(IMG(_src=URL(\'appadmin\', \'bg_graph_model\')))\n            response.write(\'\\r\\n  \', escape=False)\n            pass\n        response.write(\'\\r\\n\', escape=False)\n        pass\n    response.write(\'\\r\\n\\r\\n\', escape=False)\n    if request.function == \'manage\':\n        response.write(\'\\r\\n<h2>\', escape=False)\n        response.write(heading)\n        response.write(\'</h2>\\r\\n<ul class="nav nav-tabs">\\r\\n  \', escape=False)\n        for k, tablename in enumerate(tablenames):\n            response.write(\'\\r\\n  <li\', escape=False)\n            response.write(XML(\' class="active"\') if k == 0 else \'\')\n            response.write(\'>\\r\\n    <a href="#table-\', escape=False)\n            response.write(tablename)\n            response.write(\'" data-toggle="tab">\', escape=False)\n            response.write(labels[k])\n            response.write(\'</a>\\r\\n  </li>\\r\\n  \', escape=False)\n            pass\n        response.write(\'\\r\\n</ul>\\r\\n\\r\\n<div class="tab-content">\\r\\n  \', escape=False)\n        for k, tablename in enumerate(tablenames):\n            response.write(\'\\r\\n  <div class="tab-pane\', escape=False)\n            response.write(XML(\' active\') if k == 0 else \'\')\n            response.write(\'" id="table-\', escape=False)\n            response.write(tablename)\n            response.write(\'">\\r\\n    \', escape=False)\n            response.write(LOAD(f=\'manage.load\', args=[request.args(0), k], ajax=True))\n            response.write(\'\\r\\n  </div>\\r\\n  \', escape=False)\n            pass\n        response.write(\'\\r\\n</div>\\r\\n\', escape=False)\n        pass\n    response.write(\'\\r\\n\', escape=False)\n    response.write(\'\\r\\n          \', escape=False)\n    response.write(\'\\r\\n        </div>\\r\\n\\r\\n        \', escape=False)\n    if right_sidebar_enabled:\n        response.write(\'\\r\\n          <div class="col-md-4 col-sm-6 col-xs-12">\\r\\n              \', escape=False)\n        response.write(\'\\r\\n              \', escape=False)\n        response.write(\'\\r\\n          </div>\\r\\n        \', escape=False)\n        pass\n    response.write(\'\\r\\n\\r\\n      </div>\\r\\n\\r\\n    </section>\\r\\n    <!-- /.content -->\\r\\n  </div>\\r\\n  <!-- /.content-wrapper -->\\r\\n\\r\\n  <!-- Main Footer -->\\r\\n  <footer class="main-footer">\\r\\n\\r\\n    <!-- To the right -->\\r\\n    \', escape=False)\n    if auth.user and is_user_member(\'admin\'):\n        response.write(\'\\r\\n    <div class="pull-right hidden-xs">\\r\\n      \', escape=False)\n        response.write(\'<a\\r\\n  href="#"\\r\\n  data-toggle="modal"\\r\\n  data-target="#createTrelloCardModal"\\r\\n  data-card-list-name="bug"\\r\\n  data-card-list-id="56fc9620f329ac03d8432e08">\\r\\n  <i class="fa fa-bug"></i>&nbsp;\\r\\n</a>\\r\\n<a\\r\\n  href="#"\\r\\n  data-toggle="modal"\\r\\n  data-target="#createTrelloCardModal"\\r\\n  data-card-list-name="issue"\\r\\n  data-card-list-id="56fc961d6aa50ca42fc0ffba">\\r\\n  <i class="fa fa-question"></i>&nbsp;\\r\\n</a>\\r\\n<a\\r\\n  href="#"\\r\\n  data-toggle="modal"\\r\\n  data-target="#createTrelloCardModal"\\r\\n  data-card-list-name="idea"\\r\\n  data-card-list-id="56fc96137644044602902941">\\r\\n  <i class="fa fa-lightbulb-o"></i>&nbsp;\\r\\n</a>\\r\\n\\r\\n<!-- the div that represents the modal dialog -->\\r\\n<div class="modal fade" id="createTrelloCardModal" tabindex="-1" role="dialog" aria-labelledby="createTrelloCardModalLabel">\\r\\n  <div class="modal-dialog" role="document">\\r\\n    <div class="modal-content">\\r\\n      <div class="modal-header">\\r\\n        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>\\r\\n        <h4 class="modal-title" id="createTrelloCardModalLabel">Create Trello Card</h4>\\r\\n      </div>\\r\\n      <div class="modal-body">\\r\\n        <form id="createTrelloCardForm">\\r\\n\\r\\n          <div class="form-group">\\r\\n            <label for="card-name" class="control-label">Name:</label>\\r\\n            <input type="text" class="form-control" id="card-name">\\r\\n          </div>\\r\\n          <div class="form-group">\\r\\n            <label for="card-description" class="control-label">Description:</label>\\r\\n            <textarea class="form-control" id="card-description"></textarea>\\r\\n          </div>\\r\\n\\r\\n          <div class="form-group">\\r\\n            <div class="radio">\\r\\n              <label>\\r\\n                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>\\r\\n                Priority 1! &nbsp;Emergency, I can\\\'t perform my job, <br>drop everything and get this done now!  Release ASAP!\\r\\n              </label>\\r\\n            </div>\\r\\n            <div class="radio">\\r\\n              <label>\\r\\n                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">\\r\\n                Priority 2! &nbsp;Important, add to current development activities <br>and release with current activities.\\r\\n              </label>\\r\\n            </div>\\r\\n            <div class="radio disabled">\\r\\n              <label>\\r\\n                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">\\r\\n                Priority 3! &nbsp;Mostly cosmetic, <br>let\\\'s not forget about it but let\\\'s not rush.\\r\\n              </label>\\r\\n            </div>\\r\\n          </div>\\r\\n\\r\\n          <div class="form-group">\\r\\n            <label for="card-list-name" class="control-label">List Name:</label>\\r\\n            <input type="text" class="form-control" id="card-list-name" readonly>\\r\\n          </div>\\r\\n          <div class="form-group hidden">\\r\\n            <label for="card-list-id" class="control-label">List Id:</label>\\r\\n            <input type="text" class="form-control" id="card-list-id">\\r\\n          </div>\\r\\n\\r\\n        </form>\\r\\n      </div>\\r\\n      <div class="modal-footer">\\r\\n        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>\\r\\n        <button type="button" class="btn btn-primary" id="createTrelloCardSubmit">Create Trello Card</button>\\r\\n      </div>\\r\\n    </div>\\r\\n  </div>\\r\\n</div>\\r\\n\\r\\n<script src="https://api.trello.com/1/client.js?key=\', escape=False)\n        response.write(trello_api_key)\n        response.write(\'"></script>\\r\\n\\r\\n<script>\\r\\n  $(document).ready(function() {\\r\\n\\r\\n    $(\\\'#createTrelloCardModal\\\').on(\\\'show.bs.modal\\\', function (event) {\\r\\n      var button = $(event.relatedTarget) // Button that triggered the modal\\r\\n      var cardListName = button.data(\\\'card-list-name\\\') // Extract info from data-* attributes\\r\\n      var cardListId = button.data(\\\'card-list-id\\\') // Extract info from data-* attributes\\r\\n      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).\\r\\n      // Update the modal\\\'s content. We\\\'ll use jQuery here, but you could use a data binding library or other methods instead.\\r\\n      var modal = $(this)\\r\\n      modal.find(\\\'.modal-title\\\').text(\\\'Create Trello Card in the \\\' + cardListName + \\\'s List\\\')\\r\\n      modal.find(\\\'.modal-body #card-list-name\\\').val(cardListName)\\r\\n      modal.find(\\\'.modal-body #card-list-id\\\').val(cardListId)\\r\\n\\r\\n      // set placeholders\\r\\n      // if (cardListName == \\\'bug\\\') {\\r\\n      //   modal.find(\\\'.modal-body #card-name\\\').attr("placeholder", "Oooops ... Sorry for the problem")\\r\\n      // } else if (cardListName == \\\'issue\\\') {\\r\\n      //   modal.find(\\\'.modal-body #card-name\\\').attr("placeholder", "What is the issue in the form of a question")\\r\\n      // } else if (cardListName == \\\'idea\\\') {\\r\\n      //   modal.find(\\\'.modal-body #card-name\\\').attr("placeholder", "What\\\'s your big idea?")\\r\\n      // } else {\\r\\n      //   modal.find(\\\'.modal-body #card-name\\\').attr("placeholder", "Enter the card name")\\r\\n      // }\\r\\n\\r\\n      var list_placeholders = {\\r\\n          \\\'bug\\\': \\\'Oooops ... Sorry for the problem\\\',\\r\\n          \\\'issue\\\': \\\'What is the issue in the form of a question\\\',\\r\\n          \\\'idea\\\': "What\\\'s your big idea?"\\r\\n      };\\r\\n      modal.find(\\\'.modal-body #card-name\\\').attr("placeholder", list_placeholders[cardListName])\\r\\n\\r\\n    });\\r\\n\\r\\n    // http://stackoverflow.com/questions/14375144/jquery-prevent-default-then-continue-default\\r\\n    // http://www.superglobals.net/submit-form-bootstrap-modal/\\r\\n\\r\\n    $("#createTrelloCardForm").submit(function(e) {\\r\\n      // var postData = $(this).serializeArray();\\r\\n      // var formURL = $(this).attr("action");\\r\\n      // $.ajax({\\r\\n      //     url: formURL,\\r\\n      //     type: "POST",\\r\\n      //     data: postData,\\r\\n      //     success: function(data, textStatus, jqXHR) {\\r\\n      //         $(\\\'#createTrelloCardModal .modal-header .modal-title\\\').html("Result");\\r\\n      //         $(\\\'#createTrelloCardModal .modal-body\\\').html(data);\\r\\n      //         $("#createTrelloCardSubmit").remove();\\r\\n      //     },\\r\\n      //     error: function(jqXHR, status, error) {\\r\\n      //         console.log(status + ": " + error);\\r\\n      //     }\\r\\n      // });\\r\\n\\r\\n      // Trello api\\r\\n      // https://developers.trello.com/get-started/start-building\\r\\n\\r\\n      var authenticationSuccess = function() { console.log(\\\'Successful authentication\\\'); };\\r\\n      var authenticationFailure = function() { console.log(\\\'Failed authentication\\\'); };\\r\\n\\r\\n      Trello.authorize({\\r\\n        type: popup,\\r\\n        name: \\\'MCG Portal\\\',\\r\\n        scope: {\\r\\n          read: true,\\r\\n          write: true },\\r\\n        expiration: \\\'never\\\',\\r\\n        success: authenticationSuccess,\\r\\n        error: authenticationFailure\\r\\n      });\\r\\n\\r\\n      var creationSuccess = function(data) {\\r\\n        console.log(\\\'Card created successfully. Data returned:\\\' + JSON.stringify(data));\\r\\n      };\\r\\n      var creationFailure = function(data) {\\r\\n        console.log(\\\'Card created UNsuccessfully. Data returned:\\\' + JSON.stringify(data));\\r\\n      };\\r\\n\\r\\n      // use list name to find list id (OR pass list id in button data attr)\\r\\n      var list_ids = {\\r\\n          \\\'bug\\\': \\\'56fc9620f329ac03d8432e08\\\',\\r\\n          \\\'idea\\\': \\\'56fc96137644044602902941\\\',\\r\\n          \\\'issue\\\': \\\'56fc961d6aa50ca42fc0ffba\\\'\\r\\n      };\\r\\n      var list_id = list_ids[$(\\\'#createTrelloCardForm #card-list-name\\\').val()]\\r\\n\\r\\n      // build description\\r\\n      var card_description =\\r\\n        $(\\\'#createTrelloCardForm #card-description\\\').val() +\\r\\n        "\\\\n\\\\n" +\\r\\n        "URL: " + window.location.href +\\r\\n        "\\\\n" +\\r\\n        "Referrer: " + document.referrer\\r\\n\\r\\n      var newCard = {\\r\\n        name: $(\\\'#createTrelloCardForm #card-name\\\').val(),\\r\\n        desc: card_description,\\r\\n        idList: $(\\\'#createTrelloCardForm #card-list-id\\\').val(),\\r\\n        pos: \\\'top\\\'\\r\\n      };\\r\\n\\r\\n      Trello.post(\\\'/cards/\\\', newCard, creationSuccess, creationFailure);\\r\\n\\r\\n      // todo: hide submit button, display message - in creationSuccess?\\r\\n\\r\\n      $("#createTrelloCardForm")[0].reset()\\r\\n      e.preventDefault();\\r\\n    });\\r\\n\\r\\n    $("#createTrelloCardSubmit").on(\\\'click\\\', function() {\\r\\n\\r\\n      $("#createTrelloCardForm").submit();\\r\\n\\r\\n    });\\r\\n\\r\\n  });\\r\\n</script>\\r\\n\', escape=False)\n        response.write(\'\\r\\n      <a href="\', escape=False)\n        response.write(URL(\'default\', \'changelog\'))\n        response.write(\'">Version \', escape=False)\n        response.write(response.version)\n        response.write(\'</a>\\r\\n    </div>\\r\\n    \', escape=False)\n        pass\n    response.write(\'\\r\\n\\r\\n    <!-- Default to the left -->\\r\\n    <div>\\r\\n      <strong>\\r\\n        Copyright &copy;\\r\\n        <script>document.write(new Date().getFullYear());</script>\\r\\n        <a href="#">\', escape=False)\n    response.write(response.company)\n    response.write(\'</a>.\\r\\n      </strong> All rights reserved.\\r\\n    </div>\\r\\n\\r\\n    \', escape=False)\n    if request.is_local:\n        response.write(\'\\r\\n    <div id="response-toolbar">\\r\\n      <hr>\\r\\n      \', escape=False)\n        response.write(response.toolbar())\n        response.write(\'\\r\\n    </div>\\r\\n    \', escape=False)\n        pass\n    response.write(\'\\r\\n\\r\\n  </footer>\\r\\n\\r\\n  <!-- Control Sidebar -->\\r\\n  <aside class="control-sidebar control-sidebar-dark">\\r\\n    <!-- Create the tabs -->\\r\\n    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">\\r\\n      <li class="\', escape=False)\n    response.write(user_visibility(\'Admin\'))\n    response.write(\'"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>\\r\\n      <li class="active"><a href="#control-sidebar-bookmarks-tab" data-toggle="tab"><i class="fa fa-bookmark"></i></a></li>\\r\\n      <li class="\', escape=False)\n    response.write(user_visibility(\'Admin\'))\n    response.write(\'"><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-wrench"></i></a></li>\\r\\n    </ul>\\r\\n    <!-- Tab panes -->\\r\\n    <div class="tab-content">\\r\\n\\r\\n      <!-- Home tab content -->\\r\\n      <div class="tab-pane" id="control-sidebar-home-tab">\\r\\n\\r\\n        <h3 class="control-sidebar-heading">Recent Activity</h3>\\r\\n        <ul class="control-sidebar-menu">\\r\\n          <li>\\r\\n            <a href="javascript::;">\\r\\n              <i class="menu-icon fa fa-birthday-cake bg-red"></i>\\r\\n\\r\\n              <div class="menu-info">\\r\\n                <h4 class="control-sidebar-subheading">Charlie Brown signed PSA</h4>\\r\\n\\r\\n                <p>23 on April 24th</p>\\r\\n              </div>\\r\\n            </a>\\r\\n          </li>\\r\\n        </ul>\\r\\n        <!-- /.control-sidebar-menu -->\\r\\n\\r\\n        <h3 class="control-sidebar-heading">Tasks Progress</h3>\\r\\n        <ul class="control-sidebar-menu">\\r\\n          <li>\\r\\n            <a href="javascript::;">\\r\\n              <h4 class="control-sidebar-subheading">\\r\\n                Deal: Big Miami Property Due Diligence\\r\\n                <span class="label label-danger pull-right">70%</span>\\r\\n              </h4>\\r\\n\\r\\n              <div class="progress progress-xxs">\\r\\n                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>\\r\\n              </div>\\r\\n            </a>\\r\\n          </li>\\r\\n        </ul>\\r\\n        <!-- /.control-sidebar-menu -->\\r\\n\\r\\n      </div><!-- /Home tab content -->\\r\\n      <!-- /.tab-pane -->\\r\\n\\r\\n      <!-- Bookmarks tab content -->\\r\\n      <div class="tab-pane active" id="control-sidebar-bookmarks-tab">\\r\\n        <h3 class="control-sidebar-heading">Bookmarks</h3>\\r\\n\\r\\n        <div id="bookmark_list">\\r\\n          \', escape=False)\n    if auth.user:\n        response.write(\'\\r\\n            \', escape=False)\n        response.write(LOAD(\'bookmark\', \'list.load\', ajax=True, content=\'loading ...\'))\n        response.write(\'\\r\\n          \', escape=False)\n        pass\n    response.write(\'\\r\\n        </div>\\r\\n\\r\\n      </div><!-- /Bookmarks tab content -->\\r\\n      <!-- /.tab-pane -->\\r\\n\\r\\n      <!-- Settings tab content -->\\r\\n      <div class="tab-pane" id="control-sidebar-settings-tab">\\r\\n        <form method="post">\\r\\n          <h3 class="control-sidebar-heading">General Settings</h3>\\r\\n\\r\\n          <div class="form-group">\\r\\n            <label class="control-sidebar-subheading">\\r\\n              Report panel usage\\r\\n              <input type="checkbox" class="pull-right" checked>\\r\\n            </label>\\r\\n\\r\\n            <p>\\r\\n              Some information about this general settings option\\r\\n            </p>\\r\\n          </div><!-- /.form-group -->\\r\\n\\r\\n        </form>\\r\\n      </div><!-- /.tab-pane -->\\r\\n\\r\\n    </div>\\r\\n  </aside><!-- /.control-sidebar -->\\r\\n\\r\\n  <!-- Add the sidebar\\\'s background. This div must be placed\\r\\n       immediately after the control sidebar -->\\r\\n  <div class="control-sidebar-bg"></div>\\r\\n\\r\\n</div><!-- /.wrapper -->\\r\\n\\r\\n<!-- REQUIRED JS SCRIPTS *** moved to head *** -->\\r\\n\\r\\n<!-- Optionally, you can add Slimscroll and FastClick plugins.\\r\\n     Both of these plugins are recommended to enhance the\\r\\n     user experience. Slimscroll is required when using the\\r\\n     fixed layout. -->\\r\\n\\r\\n</body>\\r\\n</html>\\r\\n\', escape=False)'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__module__'
+p12
+S"'gluon.rocket'"
+p13
+sS'__getslice__'
+p14
+S"<method-wrapper '__getslice__' of SocketTimeout object>"
+p15
+sS'__str__'
+p16
+S"<method-wrapper '__str__' of SocketTimeout object>"
+p17
+sS'__reduce__'
+p18
+S'<built-in method __reduce__ of SocketTimeout object>'
+p19
+sS'__dict__'
+p20
+S'{}'
+p21
+sS'__sizeof__'
+p22
+S'<built-in method __sizeof__ of SocketTimeout object>'
+p23
+sS'__weakref__'
+p24
+S'None'
+p25
+sS'__init__'
+p26
+S"<method-wrapper '__init__' of SocketTimeout object>"
+p27
+sS'__setattr__'
+p28
+S"<method-wrapper '__setattr__' of SocketTimeout object>"
+p29
+sS'__reduce_ex__'
+p30
+S'<built-in method __reduce_ex__ of SocketTimeout object>'
+p31
+sS'__new__'
+p32
+S'<built-in method __new__ of type object>'
+p33
+sS'__format__'
+p34
+S'<built-in method __format__ of SocketTimeout object>'
+p35
+sS'__class__'
+p36
+S"<class 'gluon.rocket.SocketTimeout'>"
+p37
+sS'__doc__'
+p38
+S"'Exception for when a socket times out between requests.'"
+p39
+sS'__getitem__'
+p40
+S"<method-wrapper '__getitem__' of SocketTimeout object>"
+p41
+sS'__setstate__'
+p42
+S'<built-in method __setstate__ of SocketTimeout object>'
+p43
+sS'__getattribute__'
+p44
+S"<method-wrapper '__getattribute__' of SocketTimeout object>"
+p45
+sS'args'
+p46
+S"('Socket timed out before request.',)"
+p47
+sS'__subclasshook__'
+p48
+S'<built-in method __subclasshook__ of type object>'
+p49
+sS'__unicode__'
+p50
+S'<built-in method __unicode__ of SocketTimeout object>'
+p51
+sS'__delattr__'
+p52
+S"<method-wrapper '__delattr__' of SocketTimeout object>"
+p53
+sS'__repr__'
+p54
+S"<method-wrapper '__repr__' of SocketTimeout object>"
+p55
+sS'__hash__'
+p56
+S"<method-wrapper '__hash__' of SocketTimeout object>"
+p57
+ssS'evalue'
+p58
+S'Socket timed out before request.'
+p59
+sS'frames'
+p60
+(lp61
+(dp62
+S'file'
+p63
+S'C:\\Python\\web2py\\gluon\\rocket.py'
+p64
+sS'dump'
+p65
+(dp66
+S'self'
+p67
+S'<WSGIWorker(Thread-3, started daemon 692)>'
+p68
+sS'conn'
+p69
+S'<gluon.rocket.Connection object>'
+p70
+sS'self.run_app'
+p71
+S'<bound method WSGIWorker.run_app of <WSGIWorker(Thread-3, started daemon 692)>>'
+p72
+ssS'lnum'
+p73
+I1337
+sS'lines'
+p74
+(dp75
+I1332
+S'            # Enter connection serve loop'
+p76
+sI1333
+S'            while True:'
+p77
+sI1334
+S'                if __debug__:'
+p78
+sI1335
+S"                    self.err_log.debug('Serving a request')"
+p79
+sI1336
+S'                try:'
+p80
+sI1337
+S'                    self.run_app(conn)'
+p81
+sI1338
+S'                except:'
+p82
+sI1339
+S'                    exc = sys.exc_info()'
+p83
+sI1340
+S'                    handled = self._handleError(*exc)'
+p84
+sI1341
+S'                    if handled:'
+p85
+ssS'call'
+p86
+S'(self=<WSGIWorker(Thread-3, started daemon 692)>)'
+p87
+sS'func'
+p88
+S'run'
+p89
+sa(dp90
+g63
+S'C:\\Python\\web2py\\gluon\\rocket.py'
+p91
+sg65
+(dp92
+S'self'
+p93
+S'<WSGIWorker(Thread-3, started daemon 692)>'
+p94
+sS'self.environ'
+p95
+S"{'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, sdch', 'HTTP_ACCEPT_LANGUAGE': 'pt-BR,pt;q=0.8,he;q=0.6,en-US;q=0.4,en;q=0.2', 'HTTP_CACHE_CONTROL': 'max-age=0', 'HTTP_CONNECTION': 'keep-alive', 'HTTP_COOKIE': 'session_id_welcome=10.0.0.232-596f9019-258c-4f8f...n=10.0.0.232-90dfaa21-c33c-4b5c-ae18-58243e6be01e', 'HTTP_HOST': '10.0.0.232:8050', 'HTTP_REFERER': 'http://10.0.0.232:8050/web2py_starter/dog/list', 'HTTP_UPGRADE_INSECURE_REQUESTS': '1', 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/...L, like Gecko) Chrome/57.0.2987.133 Safari/537.36', ...}"
+p96
+sS'sock_file'
+p97
+S'<socket._fileobject object>'
+p98
+sS'environ'
+p99
+S'undefined'
+p100
+sS'self.build_environ'
+p101
+S'<bound method WSGIWorker.build_environ of <WSGIWorker(Thread-3, started daemon 692)>>'
+p102
+sS'conn'
+p103
+S'<gluon.rocket.Connection object>'
+p104
+ssg73
+I1830
+sg74
+(dp105
+I1825
+S'        else:'
+p106
+sI1826
+S'            sock_file = conn.makefile(BUF_SIZE)'
+p107
+sI1827
+S''
+sI1828
+S'        try:'
+p108
+sI1829
+S'            # Read the headers and build our WSGI environment'
+p109
+sI1830
+S'            self.environ = environ = self.build_environ(sock_file, conn)'
+p110
+sI1831
+S''
+sI1832
+S'            # Handle 100 Continue'
+p111
+sI1833
+S"            if environ.get('HTTP_EXPECT', '') == '100-continue':"
+p112
+sI1834
+S"                res = environ['SERVER_PROTOCOL'] + ' 100 Continue\\r\\n\\r\\n'"
+p113
+ssg86
+S'(self=<WSGIWorker(Thread-3, started daemon 692)>, conn=<gluon.rocket.Connection object>)'
+p114
+sg88
+S'run_app'
+p115
+sa(dp116
+g63
+S'C:\\Python\\web2py\\gluon\\rocket.py'
+p117
+sg65
+(dp118
+S'sock_file'
+p119
+S'<socket._fileobject object>'
+p120
+sS'self.read_request_line'
+p121
+S'<bound method WSGIWorker.read_request_line of <WSGIWorker(Thread-3, started daemon 692)>>'
+p122
+sS'self'
+p123
+S'<WSGIWorker(Thread-3, started daemon 692)>'
+p124
+sS'request'
+p125
+g100
+ssg73
+I1650
+sg74
+(dp126
+I1645
+S'                                      "wsgiorg.futures": executor.futures})'
+p127
+sI1646
+S''
+sI1647
+S'    def build_environ(self, sock_file, conn):'
+p128
+sI1648
+S'        """ Build the execution environment. """'
+p129
+sI1649
+S'        # Grab the request line'
+p130
+sI1650
+S'        request = self.read_request_line(sock_file)'
+p131
+sI1651
+S''
+sI1652
+S'        # Copy the Base Environment'
+p132
+sI1653
+S'        environ = self.base_environ.copy()'
+p133
+sI1654
+S''
+ssg86
+S'(self=<WSGIWorker(Thread-3, started daemon 692)>, sock_file=<socket._fileobject object>, conn=<gluon.rocket.Connection object>)'
+p134
+sg88
+S'build_environ'
+p135
+sa(dp136
+g63
+S'C:\\Python\\web2py\\gluon\\rocket.py'
+p137
+sg65
+(dp138
+S'global SocketTimeout'
+p139
+S"<class 'gluon.rocket.SocketTimeout'>"
+p140
+ssg73
+I1401
+sg74
+(dp141
+I1396
+S''
+sI1397
+S'                d = sock_file.readline()'
+p142
+sI1398
+S'                if PY3K:'
+p143
+sI1399
+S"                    d = d.decode('ISO-8859-1')"
+p144
+sI1400
+S'        except socket.timeout:'
+p145
+sI1401
+S"            raise SocketTimeout('Socket timed out before request.')"
+p146
+sI1402
+S'        except TypeError:'
+p147
+sI1403
+S'            raise SocketClosed('
+p148
+sI1404
+S"                'SSL bug caused closure of socket.  See '"
+p149
+sI1405
+S'                \'"https://groups.google.com/d/topic/web2py/P_Gw0JxWzCs".\')'
+p150
+ssg86
+S'(self=<WSGIWorker(Thread-3, started daemon 692)>, sock_file=<socket._fileobject object>)'
+p151
+sg88
+S'read_request_line'
+p152
+sasS'pyver'
+p153
+S'Python 2.7.12: C:\\Python27\\python.exe (prefix: C:\\Python27)'
+p154
+sS'etype'
+p155
+S"<class 'gluon.rocket.SocketTimeout'>"
+p156
+sS'date'
+p157
+S'Fri May 12 15:06:19 2017'
+p158
+sS'locals'
+p159
+(dp160
+S'sock_file'
+p161
+S'<socket._fileobject object>'
+p162
+sS'self'
+p163
+S'<WSGIWorker(Thread-3, started daemon 692)>'
+p164
+sssS'traceback'
+p165
+S'Traceback (most recent call last):\n  File "C:\\Python\\web2py\\gluon\\rocket.py", line 1337, in run\n    self.run_app(conn)\n  File "C:\\Python\\web2py\\gluon\\rocket.py", line 1830, in run_app\n    self.environ = environ = self.build_environ(sock_file, conn)\n  File "C:\\Python\\web2py\\gluon\\rocket.py", line 1650, in build_environ\n    request = self.read_request_line(sock_file)\n  File "C:\\Python\\web2py\\gluon\\rocket.py", line 1401, in read_request_line\n    raise SocketTimeout(\'Socket timed out before request.\')\nSocketTimeout: Socket timed out before request.\n'
+p166
+s.

@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+<h3>User Editar</h3>
+<div class="form_header row_buttons  ">
+	<a class="w2p_trap button btn" href={{=URL(
+		'adminlion','users_manage',user_signature=True)}}> <span
+		class="icon leftarrow icon-arrow-left"></span> <span
+		class="buttontext button" title="Back">Voltar</span>
+	</a>
+</div>
+{{=form_user_editar}}
+<div class='well'>
+   {{=form_grupos}}
+</div>

@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+<h1>Admin</h1>
+<h3>Editar Menu {{=request.args(0) or "Novo"}}</h3>
+
+<div class="form_header row_buttons  ">
+	<a class="w2p_trap button btn" href={{=URL(
+		'adminlion','menu_manage')}}> <span
+		class="icon leftarrow icon-arrow-left"></span> <span
+		class="buttontext button" title="Back">Voltar</span>
+	</a>
+</div>
+
+{{=form_menu_editar}}
+<div class='well'>
+{{=form_grupos_menu}}
+</div>

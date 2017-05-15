@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.AttributeError'> 'Table' object has no attribute 'ATUAL'"
+p3
+sS'layer'
+p4
+S'C:\\Python\\web2py\\applications\\wpstarter\\controllers/events.py'
+p5
+sS'code'
+p6
+S"# coding: utf8\n# tente algo como\ndef index():\n\n    form = SQLFORM.grid(db.EVENTOS,\n    fields=[db.EVENTOS.NOME_EVENT,\n    \t        db.EVENTOS.TAXA_DOLAR,\n                db.EVENTOS.ATUAL\n                ],\n\n    buttons_placement='left',\n    showbuttontext=False, # Exibe os bot\xc3\xb5es\n    _class='web2py_grid',\n    exportclasses=dict(xml=False,html=False,csv_with_hidden_cols=False,json=False,tsv_with_hidden_cols=False),\n    )\n    return dict(form=form)\n\nresponse._vars=response._caller(index)\n"
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "C:\\Python\\web2py\\gluon\\restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "C:\\Python\\web2py\\applications\\wpstarter\\controllers/events.py", line 18, in <module>\n  File "C:\\Python\\web2py\\gluon\\globals.py", line 417, in <lambda>\n    self._caller = lambda f: f()\n  File "C:\\Python\\web2py\\applications\\wpstarter\\controllers/events.py", line 8, in index\n    db.EVENTOS.ATUAL\nAttributeError: \'Table\' object has no attribute \'ATUAL\'\n'
+p11
+s.
